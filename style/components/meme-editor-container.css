@@ -1,0 +1,22 @@
+
+.meme-editor-container >*{
+     justify-self: center;
+     margin-top: 7px;
+}
+.meme-editor-container .main-canvas{
+    
+     width: 400px;
+     height: 400px;
+     outline: 1px solid #000000;
+}
+
+.meme-editor-container input{
+     /* font-family: "Montserrat-Regular"; */
+     width: 332px;
+     height: 43px;
+     background-color: rgba(255,255,255,1);
+     border-radius: 10px;
+     border: none;
+     font-size: 1rem;
+
+} 

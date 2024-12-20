@@ -39,7 +39,7 @@
                 <button value="funny">funny</button> 
                 <button value="comics">comics</button>      
                  <button value="dogs">dogs</button>
-                 <button value="more">more..</button>
+                 <button value="baby">baby</button>
                  <button value="more">more..</button>                    
                 </div>
     </div>
@@ -69,7 +69,27 @@
 
 
     <section class="meme-editor-container">
-        <div><button>hiii</button> </div> 
+        <canvas class="main-canvas"></canvas>
+
+        <section class="edit-canvas-tools">
+            <input type="text" class="text-input" placeholder="Enter your meme text" oninput="onAddTxt(this)" />
+
+            <div class="btns-editor-container">
+
+                <button class="btn-switch-inputs" onclick="onSwitchLine()"></button>
+                <button class="btn-add-inputs" onclick="onAddLine()"></button>
+                <button class="btn-delete-input" onclick="onDeleteLine()"></button>
+
+            </div> 
+            <div></div>
+
+            <form onsubmit="uploadImg(this, event)">
+              <input name="img" class="img-data" type="hidden" />
+              <button class="share btn" type="submit">Share</button>
+              <div class="share-container"></div>
+            </form>
+          </section>
+      
     </section>
 
 </main>
@@ -83,6 +103,7 @@
     <script src="js/service/gallery.js"></script>
     <script src="js/service/storage.service.js"></script>
     <script src="js/service/util.service.js"></script>
+    <script src="js/service/upload.service.js"></script>
  
         <script src="js/gallery.controller.js"></script>
         <script src="js/meme.controller.js"></script>
