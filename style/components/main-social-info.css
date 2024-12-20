@@ -1,0 +1,112 @@
+
+
+.main-social-info{
+    display: grid;
+    gap:11px;
+}
+
+.main-social-info>*{
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+   
+}
+
+.main-social-info .person-container{
+    position: relative;
+    width: 10.625rem;
+    height: 15.07rem;
+    
+}
+.main-social-info img{
+    position: absolute;
+    margin: 0;
+    transform: rotate(0deg);
+    top: -45px;
+}
+
+.main-social-info h4{  
+    /* font-family: "Montserrat-Bold"; */
+    font-size: 1.375rem;
+    position: absolute;
+    line-height: 3.375rem;
+    color: rgba(255, 127.00274999999999, 0, 1);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: max-content;
+}
+
+.main-social-info p{
+/* font-family: "Montserrat-Regular"; */
+    width: 17.07rem;
+    height: 5.25rem;
+    font-size: 0.9375rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+.social-links{
+    margin-top: 2px;
+    margin-bottom: 60px;
+    gap: 0.625em;
+}
+
+.social-links button {
+    width: 2.625rem;
+    height: 2.563rem;
+    background: rgba(255, 127.00274999999999, 0, 1);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+
+.social-links a {
+    display: block; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+
+.social-links .linkdin a {
+
+    position: absolute;
+    width: 27px;
+    height: 25px;
+   background-image: url('/img/ICONS/linkedin-logo.png');
+}
+.social-links .linkdin:hover {
+   background: var(--clr-linkdin);
+}
+
+.social-links .facebook a {
+
+    position: absolute;
+    width: 13px;
+    height: 25px;
+   background-image: url('/img/ICONS/facebook-logo\ copy\ 2.png');
+}
+.social-links .facebook:hover {
+   background: var(--clr-facebook);
+}
+
+
+.social-links .gitub a {
+
+    position: absolute;
+    width: 25px;
+    height: 25px;
+   background-image: url('/img/ICONS/github-logo.png');
+}
+.social-links .gitub:hover {
+   background: var(--clr-github);
+}
+
+

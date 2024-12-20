@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memegen</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="main-layout" onload="onInit()">
+
+    <header class="main-header full" >
+        <img class="logo" src="/img/logo.png" alt="logo">
+        <span class="hamburger">&#9776;</span>
+        <nav class="main-nav" hidden>
+            <ul class="clean-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="main-search">
+    <form autocomplete="off">        
+            <!-- <input id="search" type="text" oninput="onSearch(this.value)" placeholder="Search by title..." /> -->
+            <input id="search" type="text" placeholder="Enter search keyword" />
+            <img class="search" src="img/ICONS/search-icon.png" />
+
+    </form>
+            <!-- <select onchange="onSelectRating(this.value)"> -->
+            
+                <div class="categories-container">
+                <button value="funny">funny</button> 
+                <button value="comics">comics</button>      
+                 <button value="dogs">dogs</button>
+                 <button value="more">more..</button>
+                 <button value="more">more..</button>                    
+                </div>
+    </div>
+    <main class="main-content"></div>
+        <section>
+            <div class="image-gallery">
+        
+            </div> 
+        </section>
+        <section>
+            <div class=" meme-Editor"></div>
+        </section>
+      
+    </main>
+
+    <div class="main-social-info">
+        <div class="person-container">
+            <img class="info-img" src="/img/info.png" alt="Monica Geller img">
+            <h4>Monica Geller</h4>
+        </div>
+       
+        <p class="info-text">
+            is a fictional character,
+            one of the six main characters who appears on the American sitcom Friends (1994–2004). 
+            Created by David Crane and Marta Kauffman
+        </p>
+        <ul class="social-links clean-list ">
+          
+            <li><button class="linkdin"><a href="#"></a></button></li>
+            <li><button class="facebook"><a href="#"></a></button></li>
+            <li><button class="gitub"><a href="#"></a></button></li>
+        </ul>
+    </div>
+
+    <footer class="main-footer full">
+        <img class="logo"src="/img/logo.png" alt="logo">
+        <div class="footer-text">© all rights reserved 2019 </div>
+     
+    </footer>
+
+
+        <script src="js/services/util.service.js"></script>
+        <script src="js/services/storage.service.js"></script>
+        <script src="js/service/img.service.js"></script>
+ 
+        
+        <script src="js/img.controller.js"></script>
+
+</body>
+
+</html>

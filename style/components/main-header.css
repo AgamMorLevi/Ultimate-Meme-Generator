@@ -1,0 +1,28 @@
+.main-layout .main-header {
+    display: grid;
+    background-color: #ff7f00;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0.625rem;
+}
+
+.main-header .logo{
+    width: 8.3125rem;
+    height: 1.375rem;
+    grid-column: 1 / 2;
+    position: inherit;
+}
+
+
+
+.main-header .hamburger{
+    margin: 0;
+    grid-column: 2 / 3;
+    text-align: right;
+    color: rgba(255,255,255,1);
+    font-size: 1.25rem;
+}
+
+.main-header>*{
+    grid-row: 1;
+}

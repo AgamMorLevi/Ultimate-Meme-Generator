@@ -1,0 +1,32 @@
+.main-footer{
+    height: 13.125rem;
+    background-color: #ff7f00;
+    align-content: center;
+   
+}
+
+.main-footer>*{
+    justify-self: center;
+}
+  
+.main-footer img{
+    height: 1.375rem;
+}
+
+.main-footer .footer-text {    
+    margin-top:1rem;
+    grid-row:2;
+    margin-top: 2re;
+    font-size: 1.1875;
+    font-weight: normal;
+    line-height: 1.875rem;
+    font-style: normal;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+
+    
+/* font-family: "Montserrat-Thin"; */
+
+}
+
+

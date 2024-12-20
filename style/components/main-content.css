@@ -1,0 +1,15 @@
+.main-content{
+    margin:0;
+    padding: 0.375rem;
+    background: rgba(227.00042724609375,227.00042724609375,227.00042724609375,1)
+
+ 
+}
+
+section .image-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:0.25rem;
+    padding: 0.1875rem
+
+}

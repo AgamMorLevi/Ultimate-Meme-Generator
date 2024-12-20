@@ -1,0 +1,8 @@
+.main-layout{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4.3125rem 6rem 1fr 28.125rem 13.125rem;
+    min-height: 100vh;
+}
+
+

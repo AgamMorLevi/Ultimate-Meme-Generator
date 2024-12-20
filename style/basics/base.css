@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    }
+    
+    html{
+        margin: 0;
+        font-family: lato-bold;
+        color: var(--clr-primary);
+        line-height: 1.25;
+    
+    }
+    
+    body{
+        font-size: 1rem;
+        min-height: 100vh;
+        margin: 0;
+    
+    }
+
+    
+    
+    

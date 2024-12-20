@@ -1,0 +1,19 @@
+@import url('/style/reset.css');
+
+/* SETUP */
+@import url('/style/setup/mq.css');
+@import url('/style/setup/typography.css');
+@import url('/style/setup/vars.css');
+
+/* BASICS */
+@import url('/style/basics/base.css');
+@import url('/style/basics/helpers.css');
+@import url('/style/basics/layout.css');
+
+/* COMPONENTS */
+@import url('/style/components/main-social-info.css');
+@import url('/style/components/main-header.css');
+@import url('/style/components/main-search.css');
+@import url('/style/components/main-nav.css');
+@import url('/style/components/main-content.css');
+@import url('/style/components/main-footer.css');
