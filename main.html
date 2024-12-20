@@ -60,9 +60,9 @@
         </p>
         <ul class="social-links clean-list ">
           
-            <li><button class="linkdin"><a href="https://www.linkedin.com/home"></a></button></li>
-            <li><button class="facebook"><a href="https://www.facebook.com/"></a></button></li>
-            <li><button class="gitub"><a href="https://www.github.com/"></a></button></li>
+            <li><button class="btn-linkdin"><a href="https://www.linkedin.com/home"></a></button></li>
+            <li><button class="btn-facebook"><a href="https://www.facebook.com/"></a></button></li>
+            <li><button class="btn-gitub"><a href="https://www.github.com/"></a></button></li>
         </ul>
     </div>
 </section>
@@ -76,18 +76,73 @@
 
             <div class="btns-editor-container">
 
-                <button class="btn-switch-inputs" onclick="onSwitchLine()"></button>
-                <button class="btn-add-inputs" onclick="onAddLine()"></button>
-                <button class="btn-delete-input" onclick="onDeleteLine()"></button>
+                <button class="btn-switch-inputs" onclick="onSwitchLine()">
+                    <img src="/img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"/>
+                </button>
+                <button class="btn-add-inputs" onclick="onAddLine()">
+                    <img src="/img/ICONS/add.png"/>
+
+                </button>
+                <button class="btn-delete-input" onclick="onDeleteLine()">
+                    <img src="/img/ICONS/trash.png"/>
+
+                </button>
 
             </div> 
-            <div></div>
+            <div class="font-editors-container">
+                <button class="btn-font-add-size">
+                    <img src="/img/ICONS/increase font - icon.png" />
+                </button>
+                <button class="btn-font-reduce-size">
+                    <img src="/img/ICONS/decrease font - icon.png" />
+                </button>
+                
+                <button class="btn-font-left">
+                    <img src="/img/ICONS/align-to-left.png" />
+                </button>
+                <button class="btn-font-center">
+                    <img src="/img/ICONS/center-text-alignment.png" />
+                </button>
+                <button class="btn-font-right">
+                    <img src="/img/ICONS/align-to-left.png" />
+                </button>
+                <select class="font-selector">
+                    <option>Ariel</option>
+                    <option>Lato</option>
+                    <option>monospace</option>
+                    <option>Griffith</option>
+                </select>
+                <!-- i need to add options -->
+                <button class="color-picker-border">
+                    <img src="/img/ICONS/text stroke.png" />
+                </button>
+                <button class="color-picker-fill">
+                    <img src="/img/ICONS/paint-board-and-brush.png" />
+                </button>
+            </div>
+            <div class="sticker-container">
+                <button class="icon-btn">
+                    <img src="/img/ICONS/Layer 4 (1).png" alt="Gift Icon">
+                </button>
+                <button class="icon-btn">
+                    <img src="/img/ICONS/Layer 5.png" alt="Hat Icon">
+                </button>
+                <button class="icon-btn">
+                    <img src="/img/ICONS/Layer 6.png" alt="Glasses Icon">
+                </button>
+                <button class="icon-btn">
+                    <img src="/img/ICONS/Layer 7.png" alt="Beard Icon">
+                </button>
+            </div>
+           
+            <div class="share-container">
+                <button class="share-btn" type="submit">Share</button>
+                 <!-- i will need to add save and download ? need to ask -->
+					<!-- <a href="#" data-trans="save" class="btn-save">Save</a> -->
+					<!-- <a href="#" data-trans="download" class="btn-download">Download</a> -->
+				</div>
 
-            <form onsubmit="uploadImg(this, event)">
-              <input name="img" class="img-data" type="hidden" />
-              <button class="share btn" type="submit">Share</button>
-              <div class="share-container"></div>
-            </form>
+            </div>
           </section>
       
     </section>

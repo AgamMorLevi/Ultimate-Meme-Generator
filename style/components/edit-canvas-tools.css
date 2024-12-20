@@ -1,0 +1,74 @@
+.edit-canvas-tools{
+
+    gap: 12px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1.875em;
+}
+
+.edit-canvas-tools .btns-editor-container{
+    display: flex;
+    gap: 23px;
+}
+
+.edit-canvas-tools > div > button{
+    width: 43px;
+    height: 42px;
+    padding: 8px;
+    justify-self: center;
+    background: rgba(255,255,255,1);
+    border-radius: 15px;
+    border: none;
+}
+
+.font-editors-container {
+    display: grid;
+    column-gap: 23px;
+    row-gap: 5px;
+    grid-template-columns: repeat(5, 1fr);
+    border-radius: 15px;
+}
+.btn-switch-inputs img{
+    width: 27px;
+    height: 27px;
+}
+
+.edit-canvas-tools .font-selector{
+    grid-column: 1/4;
+    border-radius: 16px;
+    border: none;
+}
+
+.sticker-container{
+    display: flex;
+    background-color: rgba(255, 255, 255, 1);;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 15px;
+    gap: 10px; 
+    margin: 20px 0; 
+    width: 306px;
+    height: 57px;
+}    
+
+.sticker-container img{
+    width: 32px;
+    height: 29px;
+}
+
+
+.edit-canvas-tools .share-btn{
+    /* font-family: "Montserrat-Medium"; */
+    width: 123px;
+    height: 42px;
+    font-size: 16px;
+    background-color: #ff7f00;
+    color:rgba(255,255,255,1);
+   
+
+}

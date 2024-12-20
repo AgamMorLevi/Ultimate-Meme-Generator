@@ -75,18 +75,18 @@
 }
 
 
-.social-links .linkdin a {
+.social-links .btn-linkdin a {
 
     position: absolute;
     width: 27px;
     height: 25px;
    background-image: url('/img/ICONS/linkedin-logo.png');
 }
-.social-links .linkdin:hover {
+.social-links .btn-linkdin:hover {
    background: var(--clr-linkdin);
 }
 
-.social-links .facebook a {
+.social-links .btn-facebook a {
 
     position: absolute;
     width: 13px;
@@ -98,14 +98,14 @@
 }
 
 
-.social-links .gitub a {
+.social-links .btn-gitub a {
 
     position: absolute;
     width: 25px;
     height: 25px;
    background-image: url('/img/ICONS/github-logo.png');
 }
-.social-links .gitub:hover {
+.social-links .btn-gitub:hover {
    background: var(--clr-github);
 }
 
