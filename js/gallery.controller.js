@@ -1,4 +1,6 @@
 'use strict'
+const homePageContainer = document.querySelector('.home-page-container')
+const memeEditorContainer = document.querySelector('.meme-editor-container')
 
 var selectedImage
 
@@ -22,6 +24,8 @@ function renderGallery() {
 function onSelectImage(imageId) {
   selectedImage = gImgs.find((img) => img.id === imageId)
   if (selectedImage) {
+    homePageContainer.style.display = 'none'
+    memeEditorContainer.style.display = 'block'
     console.log('Selected image:', selectedImage)
     console.log('Rendering Meme Editor...')
     // renderMeme(); // Call the meme editor function if implemented
