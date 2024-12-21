@@ -17,6 +17,7 @@
 }
 
 .edit-canvas-tools > div > button{
+    cursor: pointer;
     width: 43px;
     height: 42px;
     padding: 8px;
@@ -72,3 +73,10 @@
    
 
 }
+
+
+  .color-picker-fill .color-select{
+    visibility: hidden;
+ 
+}
+

@@ -69,7 +69,8 @@
 
 
     <section class="meme-editor-container">
-        <canvas class="main-canvas"></canvas>
+        <canvas class="main-canvas" width="500" height="500"></canvas>
+
 
         <section class="edit-canvas-tools">
             <input type="text" class="text-input" placeholder="Enter your meme text" oninput="onAddTxt(this)" />
@@ -90,10 +91,10 @@
 
             </div> 
             <div class="font-editors-container">
-                <button class="btn-font-add-size">
+                <button class="btn-font-add-size" onclick="onUpdateLineSize(+1)">
                     <img src="/img/ICONS/increase font - icon.png" />
                 </button>
-                <button class="btn-font-reduce-size">
+                <button class="btn-font-reduce-size" onclick="onUpdateLineSize(-1)">
                     <img src="/img/ICONS/decrease font - icon.png" />
                 </button>
                 
@@ -112,12 +113,12 @@
                     <option>monospace</option>
                     <option>Griffith</option>
                 </select>
-                <!-- i need to add options -->
-                <button class="color-picker-border">
+                <button class="color-picker-border"  >
                     <img src="/img/ICONS/text stroke.png" />
                 </button>
-                <button class="color-picker-fill">
-                    <img src="/img/ICONS/paint-board-and-brush.png" />
+                <button class="color-picker-fill" onclick=" onPickColor()">
+                    <img src="/img/ICONS/paint-board-and-brush.png" alt="Color Picker" />
+                    <input type="color" class="color-select" value="#e66465"/>
                 </button>
             </div>
             <div class="sticker-container">
@@ -159,7 +160,8 @@
     <script src="js/service/storage.service.js"></script>
     <script src="js/service/util.service.js"></script>
     <script src="js/service/upload.service.js"></script>
- 
+    <script src="/js/service/meme.service.js"></script>
+
         <script src="js/gallery.controller.js"></script>
         <script src="js/meme.controller.js"></script>
 
