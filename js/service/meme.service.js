@@ -18,38 +18,40 @@ var gMeme = {
   ], //i will add all the lines here but not now
 }
 
-function getText() {
-  return gMeme.lines[0]
+function getLineTxt() {
+  return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 function updateLineSize(sizeChange) {
-  gMeme.lines[0].size += sizeChange
+  gSelectedLine.size += sizeChange
 
-  if (gMeme.lines[0].size < 20) gMeme.lines[0].size = 20
-  if (gMeme.lines[0].size > 100) gMeme.lines[0].size = 100
+  if (gSelectedLine.size < 20) gSelectedLine.size = 20
+  if (gSelectedLine.size > 100) gSelectedLine.size = 100
 
-  return gMeme.lines[0].size
+  return gSelectedLine.size
 }
 
 function _createLine(
-  txt = gMeme.lines[0].txt,
-  size = gMeme.lines[0].size,
-  color = gMeme.lines[0].color,
-  font = gMeme.lines[0].font,
-  borderColor = gMeme.lines[0].borderColor,
-  textAlign = gMeme.lines[0].textAlign
+  txt = 'Hello World',
+  size = 30,
+  color = '#000000',
+  font = 'Arial',
+  borderColor = '#FFFFFF',
+  borderWidth = 2,
+  textAlign = 'left',
+  x = 125,
+  y = 100
 ) {
   return {
-    id: makeId(),
     txt,
     size,
     color,
     font,
     borderColor,
     textAlign,
-    borderWidth: gMeme.lines[0].borderWidth,
-    x: gElCanvas.width / 2,
-    y: gElCanvas.height / 2,
+    borderWidth,
+    x,
+    y,
   }
 }
 
