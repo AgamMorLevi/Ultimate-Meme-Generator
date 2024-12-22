@@ -7,8 +7,8 @@
 
 /* BASICS */
 @import url('basics/base.css');
-@import url('style/basics/helpers.css');
-@import url('style/basics/layout.css');
+@import url('basics/helpers.css');
+@import url('basics/layout.css');
 
 /* COMPONENTS */
 @import url('components/main-social-info.css');
