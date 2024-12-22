@@ -107,18 +107,20 @@
                 <button class="btn-font-right">
                     <img src="/img/ICONS/align-to-left.png" />
                 </button>
-                <select class="font-selector">
-                    <option>Ariel</option>
-                    <option>Lato</option>
-                    <option>monospace</option>
-                    <option>Griffith</option>
-                </select>
-                <button class="color-picker-border"  >
+                <select class="font-selector" onclick="onSelectFont()">
+                    <option value="fantasy">Fantasy</option>
+                    <option value="monospace">Monospace</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="serif">Serif</option>
+                    <option value="math">Math</option> 
+                  </select>
+                <button class="color-picker-border" onclick=" onPickBorderColor()"  >
                     <img src="/img/ICONS/text stroke.png" />
+                    <input type="color" class="border-color-select" />
                 </button>
-                <button class="color-picker-fill" onclick=" onPickColor()">
-                    <img src="/img/ICONS/paint-board-and-brush.png" alt="Color Picker" />
-                    <input type="color" class="color-select" value="#e66465"/>
+                <button class="color-picker-fill" onclick=" onPickColor()" >
+                    <img src="/img/ICONS/paint-board-and-brush.png" />
+                    <input type="color" class="color-select" value="#32a27d"/>
                 </button>
             </div>
             <div class="sticker-container">

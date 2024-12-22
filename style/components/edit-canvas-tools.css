@@ -73,10 +73,16 @@
    
 
 }
-
-
-  .color-picker-fill .color-select{
-    visibility: hidden;
- 
-}
-
+.color-picker-fill, .color-picker-border {
+    position: relative;
+  }
+  
+  input[type="color"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }

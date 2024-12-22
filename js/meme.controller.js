@@ -26,27 +26,32 @@ function renderCanvas() {
 function renderText() {
   gCtx.font = `${gText.size}px ${gText.font}`
   gCtx.fillStyle = gText.color
-  gCtx.textAlign = 'center'
+  gCtx.strokeStyle = gText.borderColor
+  gCtx.lineWidth = gText.borderWidth
+  gCtx.textAlign = 'left'
   gCtx.textBaseline = 'middle'
 
-  let x = gElCanvas.width / 4
-  let y = gElCanvas.height / 2
-  for (let i = 0; i < gText.txt.length; i++) {
-    gCtx.fillText(gText.txt[i], x, y)
-    x += gCtx.measureText(gText.txt[i]).width + 2
-  }
+  var x = gElCanvas.width / 4
+  var y = gElCanvas.height / 2
+  const letterSpacing = 2
+
+  gCtx.strokeText(gText.txt, x, y)
+  gCtx.fillText(gText.txt, x, y)
+
+  x = gCtx.measureText(gText.txt).width / gText.txt.length
+  console.log(gText.size, letterSpacing, gText.txt)
 }
 
 function onAddTxt(inputElement) {
   const eltext = inputElement.value
-  gText = { txt: eltext, color: 'black', size: 30, font: 'Arial' }
+  if (eltext) {
+    gText.txt = eltext
+  } else {
+    gText.txt = ''
+  }
   renderText()
   renderCanvas()
 }
-
-function onAddLine() {}
-
-function onDeleteLine() {}
 
 function onUpdateLineSize(sizeChange) {
   updateLineSize(sizeChange)
@@ -54,9 +59,36 @@ function onUpdateLineSize(sizeChange) {
   renderCanvas()
 }
 
-function onSelectFont() {}
+function onSelectFont() {
+  const fontSelector = document.querySelector('.font-selector')
+  fontSelector.addEventListener('change', (event) => {
+    const selectedFont = event.target.value
+    gText.font = selectedFont
+    renderText()
+    renderCanvas()
+  })
+}
 
 function onPickColor() {
   const elColorSelect = document.querySelector('.color-select')
+
+  elColorSelect.addEventListener('input', (event) => {
+    gText.color = event.target.value
+    renderText()
+    renderCanvas()
+  })
+
   elColorSelect.click()
+}
+
+function onPickBorderColor() {
+  const elBorderColorSelect = document.querySelector('.border-color-select')
+
+  elBorderColorSelect.addEventListener('input', (event) => {
+    gText.borderColor = event.target.value
+    renderText()
+    renderCanvas()
+  })
+
+  elBorderColorSelect.click()
 }

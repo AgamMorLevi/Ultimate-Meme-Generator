@@ -1,15 +1,17 @@
 'use strict'
-var gText = { txt: '', color: 'black', size: 30, font: 'Arial' }
+var gText = {
+  txt: 'Hello World',
+  size: 30,
+  color: '#000000',
+  font: 'Arial',
+  borderColor: '#FFFFFF',
+  borderWidth: 2,
+}
+
 var gMeme = {
   selectedImgId: 5,
   selectedLineIdx: 0,
-  lines: [],
-}
-
-function _createLine(txt = 'Hello World', color = 'black', size = 30, font = 'Arial') {
-  const newLine = { txt, color, size, font }
-  gMeme.lines.push(newText)
-  console.log('Text created:', newLine)
+  lines: [], //i will add all the lines here but not now
 }
 
 function getText() {
@@ -24,3 +26,24 @@ function updateLineSize(sizeChange) {
 
   return gText.size
 }
+
+function _createLine(
+  txt = gText.txt,
+  size = gText.size,
+  color = gText.color,
+  font = gText.font,
+  borderColor = gText.borderColor
+) {
+  return {
+    id: makeId(),
+    txt,
+    size,
+    color,
+    font,
+    borderColor,
+    borderWidth: gText.borderWidth,
+    x: gElCanvas.width / 2,
+    y: gElCanvas.height / 2,
+  }
+}
+function _createLines() {}
