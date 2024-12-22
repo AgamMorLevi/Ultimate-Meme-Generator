@@ -98,14 +98,14 @@
                     <img src="/img/ICONS/decrease font - icon.png" />
                 </button>
                 
-                <button class="btn-font-left">
-                    <img src="/img/ICONS/align-to-left.png" />
+                <button class="btn-font-left" onclick="onAlignText('left')">
+                    <img src="/img/ICONS/align-to-left.png"  />
                 </button>
-                <button class="btn-font-center">
-                    <img src="/img/ICONS/center-text-alignment.png" />
+                <button class="btn-font-center" onclick="onAlignText('center')">
+                    <img src="/img/ICONS/center-text-alignment.png"  />
                 </button>
-                <button class="btn-font-right">
-                    <img src="/img/ICONS/align-to-left.png" />
+                <button class="btn-font-right"  onclick="onAlignText('right')">
+                    <img src="/img/ICONS/align-to-right.png" />
                 </button>
                 <select class="font-selector" onclick="onSelectFont()">
                     <option value="fantasy">Fantasy</option>
@@ -157,6 +157,8 @@
      
     </footer>
 
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
 
     <script src="js/service/gallery.js"></script>
     <script src="js/service/storage.service.js"></script>
@@ -164,8 +166,6 @@
     <script src="js/service/upload.service.js"></script>
     <script src="/js/service/meme.service.js"></script>
 
-        <script src="js/gallery.controller.js"></script>
-        <script src="js/meme.controller.js"></script>
 
 </body>
 

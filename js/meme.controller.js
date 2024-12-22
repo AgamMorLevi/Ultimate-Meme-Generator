@@ -6,10 +6,10 @@ var gSelectedImg
 
 function initCanvas(imgUrl) {
   gSelectedImg = imgUrl
-  renderCanvas()
+  renderMeme()
 }
 
-function renderCanvas() {
+function renderMeme() {
   gElCanvas = document.querySelector('.main-canvas')
   gCtx = gElCanvas.getContext('2d')
 
@@ -17,55 +17,45 @@ function renderCanvas() {
   img.src = gSelectedImg
 
   img.onload = () => {
+    console.log('im herreee')
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    renderText()
+    renderLine()
   }
 }
 
-function renderText() {
-  gCtx.font = `${gText.size}px ${gText.font}`
-  gCtx.fillStyle = gText.color
-  gCtx.strokeStyle = gText.borderColor
-  gCtx.lineWidth = gText.borderWidth
-  gCtx.textAlign = 'left'
-  gCtx.textBaseline = 'middle'
+function renderLine() {
+  gCtx.font = `${gMeme.lines[0].size}px ${gMeme.lines[0].font}`
+  gCtx.fillStyle = gMeme.lines[0].color
+  gCtx.strokeStyle = gMeme.lines[0].borderColor
+  gCtx.lineWidth = gMeme.lines[0].borderWidth
+  gCtx.textAlign = gMeme.lines[0].textAlign
 
-  var x = gElCanvas.width / 4
-  var y = gElCanvas.height / 2
-  const letterSpacing = 2
-
-  gCtx.strokeText(gText.txt, x, y)
-  gCtx.fillText(gText.txt, x, y)
-
-  x = gCtx.measureText(gText.txt).width / gText.txt.length
-  console.log(gText.size, letterSpacing, gText.txt)
+  gCtx.strokeText(gMeme.lines[0].txt, gMeme.lines[0].x, gMeme.lines[0].y)
+  gCtx.fillText(gMeme.lines[0].txt, gMeme.lines[0].x, gMeme.lines[0].y)
 }
 
 function onAddTxt(inputElement) {
   const eltext = inputElement.value
   if (eltext) {
-    gText.txt = eltext
+    gMeme.lines[0].txt = eltext
   } else {
-    gText.txt = ''
+    gMeme.lines[0].txt = ''
   }
-  renderText()
-  renderCanvas()
+  renderMeme()
 }
 
 function onUpdateLineSize(sizeChange) {
   updateLineSize(sizeChange)
-  renderText()
-  renderCanvas()
+  renderMeme()
 }
 
 function onSelectFont() {
   const fontSelector = document.querySelector('.font-selector')
   fontSelector.addEventListener('change', (event) => {
     const selectedFont = event.target.value
-    gText.font = selectedFont
-    renderText()
-    renderCanvas()
+    gMeme.lines[0].font = selectedFont
+    renderMeme()
   })
 }
 
@@ -73,9 +63,8 @@ function onPickColor() {
   const elColorSelect = document.querySelector('.color-select')
 
   elColorSelect.addEventListener('input', (event) => {
-    gText.color = event.target.value
-    renderText()
-    renderCanvas()
+    gMeme.lines[0].color = event.target.value
+    renderMeme()
   })
 
   elColorSelect.click()
@@ -85,10 +74,22 @@ function onPickBorderColor() {
   const elBorderColorSelect = document.querySelector('.border-color-select')
 
   elBorderColorSelect.addEventListener('input', (event) => {
-    gText.borderColor = event.target.value
-    renderText()
-    renderCanvas()
+    gMeme.lines[0].borderColor = event.target.value
+    renderMeme()
   })
 
   elBorderColorSelect.click()
+}
+
+function onAlignText(alignType) {
+  var textWidth = gMeme.lines[0].txt.length
+  gMeme.lines[0].textAlign = alignType
+  if (alignType === 'left') {
+    gMeme.lines[0].x = 0
+  } else if (alignType === 'center') {
+    gMeme.lines[0].x = (gElCanvas.width - textWidth) / 2
+  } else if (alignType === 'right') {
+    gMeme.lines[0].x = gElCanvas.width - textWidth
+  }
+  renderMeme()
 }
