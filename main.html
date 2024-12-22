@@ -80,7 +80,7 @@
                 <button class="btn-switch-inputs" onclick="onSwitchLine()">
                     <img src="/img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"/>
                 </button>
-                <button class="btn-add-inputs" onclick="onAddLine()">
+                <button class="btn-add-inputs" onclick="onAddLine(+50)">
                     <img src="/img/ICONS/add.png"/>
 
                 </button>
@@ -114,11 +114,11 @@
                     <option value="serif">Serif</option>
                     <option value="math">Math</option> 
                   </select>
-                <button class="color-picker-border" onclick=" onPickBorderColor()"  >
+                <button class="color-picker-border" onclick=" onPickColor('border')"  >
                     <img src="/img/ICONS/text stroke.png" />
                     <input type="color" class="border-color-select" />
                 </button>
-                <button class="color-picker-fill" onclick=" onPickColor()" >
+                <button class="color-picker-fill" onclick=" onPickColor('fill')" >
                     <img src="/img/ICONS/paint-board-and-brush.png" />
                     <input type="color" class="color-select" value="#32a27d"/>
                 </button>

@@ -30,7 +30,6 @@ function onSelectImage(imageId) {
 
     const imgUrl = `img/meme-img/${selectedImage.url}`
 
-    console.log('Selected image:', selectedImage, 'Image URL:', imgUrl)
     initCanvas(imgUrl)
   }
 }
