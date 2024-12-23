@@ -39,14 +39,11 @@ function onMove(ev) {
     gSelectedLine.pos.y += dy
     gStartPos = pos
     renderMeme()
-    console.log('Move ', gStartPos)
   }
 }
 
 function onUp(ev) {
   gStartPos = null
-
-  console.log('Mouse/Touch up', gStartPos)
 }
 
 function isLineClicked(pos) {
@@ -85,6 +82,6 @@ function getEvPos(ev) {
       y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
     }
   }
-  console.log('Event position:', pos)
+
   return pos
 }

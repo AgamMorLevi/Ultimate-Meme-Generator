@@ -116,3 +116,13 @@ function onSwitchLine() {
   input.value = gSelectedLine.txt
   renderMeme()
 }
+
+function OnScroll(side) {
+  const scroller = document.getElementById('emojiScroller')
+  scroller.scrollBy({ left: side, behavior: 'smooth' })
+}
+
+function onEmojiClick(emoji) {
+  addLine(0, emoji)
+  renderMeme()
+}

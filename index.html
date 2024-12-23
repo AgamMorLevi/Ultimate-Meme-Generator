@@ -123,20 +123,24 @@
                     <input type="color" class="color-select" value="#32a27d"/>
                 </button>
             </div>
-            <div class="sticker-container">
-                <button class="icon-btn">
-                    <img src="img/ICONS/Layer 4 (1).png" alt="Gift Icon">
-                </button>
-                <button class="icon-btn">
-                    <img src="img/ICONS/Layer 5.png" alt="Hat Icon">
-                </button>
-                <button class="icon-btn">
-                    <img src="img/ICONS/Layer 6.png" alt="Glasses Icon">
-                </button>
-                <button class="icon-btn">
-                    <img src="img/ICONS/Layer 7.png" alt="Beard Icon">
-                </button>
-            </div>
+            <div class="emoji-scroller-container">
+                <button class="scroll-button" onclick="OnScroll(-100)">&#9664;</button> 
+                <div class="emoji-scroller" id="emojiScroller">
+                  <div class="emoji-container">
+                    <span onclick="onEmojiClick('🍕')">🍕</span>
+                    <span onclick="onEmojiClick('🍔')">🍔</span>
+                    <span onclick="onEmojiClick('🌮')">🌮</span>
+                    <span onclick="onEmojiClick('🍣')">🍣</span>
+                    <span onclick="onEmojiClick('🍜')">🍜</span>
+                    <span onclick="onEmojiClick('🍇')">🍇</span>
+                    <span onclick="onEmojiClick('🍪')">🍪</span>
+                    <span onclick="onEmojiClick('🦐')">🦐</span>
+                    <span onclick="onEmojiClick('🦑')">🦑</span>
+                    <span onclick="onEmojiClick('🦞')">🦞</span>
+                  </div>
+                </div>
+                <button class="scroll-button" onclick="OnScroll(100)">&#9654;</button> 
+              </div>
            
             <div class="share-container">
                 <button class="share-btn" type="submit">Share</button>
