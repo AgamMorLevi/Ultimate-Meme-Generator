@@ -6,6 +6,7 @@ var gSelectedImg
 var gSelectedLine
 var gStartPos
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+const input = document.querySelector('.text-input')
 
 function initCanvas(imgUrl) {
   gSelectedImg = imgUrl
@@ -60,8 +61,8 @@ function onDown(ev) {
 
   if (isLineClicked(pos)) {
     gStartPos = pos
-    console.log('Start dragging at:', gStartPos)
   }
+  console.log(gMeme.selectedLineIdx)
 }
 
 function onMove(ev) {
@@ -85,13 +86,24 @@ function onUp(ev) {
 }
 
 function isLineClicked(pos) {
-  const line = gSelectedLine
-  return (
-    pos.x >= line.pos.x &&
-    pos.x <= line.pos.x + gCtx.measureText(line.txt).width &&
-    pos.y >= line.pos.y - line.size &&
-    pos.y <= line.pos.y + line.size
-  )
+  //const line = gSelectedLine
+
+  const line = gMeme.lines.find((line) => {
+    return (
+      pos.x >= line.pos.x &&
+      pos.x <= line.pos.x + gCtx.measureText(line.txt).width &&
+      pos.y >= line.pos.y - line.size &&
+      pos.y <= line.pos.y + line.size
+    )
+  })
+  if (line) {
+    gMeme.selectedLineIdx = gMeme.lines.indexOf(line)
+    gSelectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    input.value = gSelectedLine.txt
+    renderMeme()
+    return true
+  }
+  return false
 }
 
 function renderLines() {
@@ -127,7 +139,11 @@ function getEvPos(ev) {
 }
 
 function onAddTxt(inputElement) {
-  addTxt(inputElement)
+  if (gMeme.lines.length) {
+    addTxt(inputElement)
+  } else {
+    addLine(0, inputElement.value)
+  }
   renderMeme()
 }
 
@@ -167,14 +183,26 @@ function onAlignText(alignType) {
 
 function onAddLine(count) {
   addLine(count)
+  input.value = ''
   renderMeme()
 }
 
 function onDeleteLine() {
   deleteLine()
+  if (gMeme.lines.length) {
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    gSelectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    input.value = gSelectedLine.txt
+  } else {
+    input.value = ''
+  }
+
   renderMeme()
 }
 
 function onSwitchLine() {
-  //  gSelectedLine = gMeme.lines[gMeme.selectedLineIdx--]
+  gMeme.selectedLineIdx > 0 ? gMeme.selectedLineIdx-- : (gMeme.selectedLineIdx = gMeme.lines.length - 1)
+  gSelectedLine = gMeme.lines[gMeme.selectedLineIdx]
+  input.value = gSelectedLine.txt
+  renderMeme()
 }

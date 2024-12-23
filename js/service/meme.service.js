@@ -64,20 +64,20 @@ function alignText(alignType) {
     alignType === 'left' ? 0 : alignType === 'center' ? (gElCanvas.width - textWidth) / 2 : gElCanvas.width - textWidth
 }
 
-function addLine(count) {
+function addLine(count, text = 'Hello World') {
   var lineHeight = gMeme.lines.length ? gSelectedLine.pos.y + count : 100
   var lineWidth = gMeme.lines.length ? gSelectedLine.pos.x + count : 125
 
   lineWidth = lineWidth >= 400 ? 0 : lineWidth
   lineHeight = lineHeight >= 450 ? 50 : lineHeight
-  const newLine = setLineTxt('Hello World', { x: lineWidth, y: lineHeight })
+  const newLine = setLineTxt(text, { x: lineWidth, y: lineHeight })
   gMeme.lines.push(newLine)
-  gMeme.selectedLineIdx++
+  gMeme.selectedLineIdx = gMeme.lines.length - 1
+  console.log(gMeme.selectedLineIdx)
 }
 
 function deleteLine() {
   if (gMeme.lines.length > 0) {
-    gMeme.lines.splice(-1)
-    gMeme.selectedLineIdx--
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
   }
 }
