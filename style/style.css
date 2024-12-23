@@ -1,7 +1,6 @@
 @import url('reset.css');
 
 /* SETUP */
-@import url('setup/mq.css');
 @import url('setup/typography.css');
 @import url('setup/vars.css');
 
@@ -19,3 +18,5 @@
 @import url('components/main-footer.css');
 @import url('components/meme-editor-container.css');
 @import url('components/edit-canvas-tools.css');
+
+@import url('setup/mq.css');

@@ -13,9 +13,8 @@
     <header class="main-header full" >
         <img class="logo" src="img/logo.png" alt="logo">
         <span class="hamburger">&#9776;</span>
-        <nav class="main-nav" hidden>
-            <ul class="clean-list">
-                <li><a href="#">Home</a></li>
+        <nav class="main-nav" >
+            <ul >
                 <li><a href="#">About</a></li>
                 <li><a href="#">Gallery</a></li>
 
@@ -50,20 +49,21 @@
     <div class="main-social-info">
         <div class="person-container">
             <img class="info-img" src="img/info.png" alt="Monica Geller img">
-            <h4>Monica Geller</h4>
         </div>
-       
+        <div class="person-detailes">
+        <h4>Monica Geller</h4>
         <p class="info-text">
             is a fictional character,
             one of the six main characters who appears on the American sitcom Friends (1994–2004). 
             Created by David Crane and Marta Kauffman
         </p>
         <ul class="social-links clean-list ">
-          
             <li><button class="btn-linkdin"><a href="https://www.linkedin.com/home"></a></button></li>
             <li><button class="btn-facebook"><a href="https://www.facebook.com/"></a></button></li>
             <li><button class="btn-gitub"><a href="https://www.github.com/"></a></button></li>
         </ul>
+    </div>
+        
     </div>
 </section>
 
@@ -72,10 +72,6 @@
         <div class="canvas-container">
             <canvas class="main-canvas" width="500" height="500"></canvas>
           </div>
-
-    
-
-
         <section class="edit-canvas-tools">
             <input type="text" class="text-input" placeholder="Enter your meme text" oninput="onAddTxt(this)" />
 
@@ -169,6 +165,7 @@
     <script src="js/service/util.service.js"></script>
     <script src="js/service/upload.service.js"></script>
     <script src="js/service/meme.service.js"></script>
+    <script src="js/service/meme.EvListeners.service.js"></script>
 
 
 </body>

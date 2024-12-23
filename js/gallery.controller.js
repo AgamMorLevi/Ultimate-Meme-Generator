@@ -26,7 +26,7 @@ function onSelectImage(imageId) {
 
   if (selectedImage) {
     homePageContainer.style.display = 'none'
-    memeEditorContainer.style.display = 'grid'
+    memeEditorContainer.style.display = window.innerWidth < 764 ? 'grid' : 'flex'
 
     const imgUrl = `img/meme-img/${selectedImage.url}`
 

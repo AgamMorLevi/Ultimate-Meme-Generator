@@ -1,0 +1,136 @@
+/* Tablet */
+@media (width > 764px) {
+
+    main .meme-editor-container{
+        height: 100%;
+        gap:140px;
+        padding: 11px;
+        justify-content: center;
+    }
+
+    .main-header>*{
+        grid-column: 2 / 3;
+        grid-row: 1;
+    }
+    
+    .main-header .hamburger{
+      display: none;
+    }
+    .main-header.main-nav{
+        display: block;
+    
+    }
+    .main-nav ul li{
+        text-align: center;
+        align-content: flex-end;
+    
+    }
+
+    .main-nav ul li:hover{
+        color: var(--clr-secondary);
+        border-bottom: 0.4rem solid var(--clr-secondary);
+    }
+    .main-nav ul a{
+     text-decoration: none;
+    }
+    
+    .main-content .meme-editor-container{
+        font-size: 2.5rem;
+        display: flex;
+        gap: 26px;
+        justify-self: center;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 1.875em;
+    }
+    .main-content .meme-editor-container>*{
+        align-items: center;
+        justify-self: center;
+    }
+
+    .meme-editor-container .main-canvas{
+        height: 600px;
+        width: 600px;
+        margin: 10px;
+        
+   }
+   
+    
+    .meme-editor-container .edit-canvas-tools{
+        font-size: 2.5rem;
+        width: fit-content;
+        align-content: stretch;
+        justify-items: center;
+        gap:0;
+
+   
+    }
+    .edit-canvas-tools>div>button{
+        width: 49.1px;
+        height: 52.2px;
+        padding: 10px;
+      
+    }
+
+    .font-editors-container {
+        column-gap: 27.6px;
+        row-gap: 36.8px;
+    }
+    
+
+    .main-header .logo {
+        width: 9.1125rem;
+        height: 1.375rem;
+       
+    }
+
+    .main-footer .footer-text {
+        font-size: 20.7875px;
+        
+    }
+    section .image-gallery {
+    
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    }
+
+    .main-social-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .main-footer .main-social-info>*{
+        align-items: center;
+        justify-self: center;
+    }
+    .main-social-info img {
+        bottom: 7px;
+    }
+
+    .person-detailes {
+        align-items:start;
+         gap: 0; 
+    }
+
+    .person-detailes h4 {
+        /* font-family: "Montserrat-Bold"; */
+        font-size: 25px;
+        position: unset; 
+        transform:none;
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .person-detailes p {
+        /* font-family: "Montserrat-Regular"; */
+        width: 530px;
+        margin-bottom: 48px;
+        height:auto; 
+        font-size: 20px;
+        text-align: start; 
+        
+    }
+   
+}
+
+

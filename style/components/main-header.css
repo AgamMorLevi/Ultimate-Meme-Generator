@@ -15,14 +15,3 @@
 
 
 
-.main-header .hamburger{
-    margin: 0;
-    grid-column: 2 / 3;
-    text-align: right;
-    color: rgba(255,255,255,1);
-    font-size: 1.25rem;
-}
-
-.main-header>*{
-    grid-row: 1;
-}
