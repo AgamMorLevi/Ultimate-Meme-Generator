@@ -12,8 +12,7 @@ var gMeme = {
       borderColor: '#FFFFFF',
       borderWidth: 5,
       textAlign: 'left',
-      x: 125,
-      y: 100,
+      pos: { x: 125, y: 100 },
     },
   ],
 }
@@ -33,8 +32,7 @@ function updateLineSize(sizeChange) {
 
 function setLineTxt(
   txt = 'Hello World',
-  y = 100,
-  x = 125,
+  pos = { x: 125, y: 100 },
   size = 30,
   color = '#000000',
   font = 'Arial',
@@ -44,14 +42,13 @@ function setLineTxt(
 ) {
   return {
     txt,
+    pos,
     size,
     color,
     font,
     borderColor,
     textAlign,
     borderWidth,
-    x,
-    y,
   }
 }
 
@@ -63,17 +60,17 @@ function addTxt(inputElement) {
 function alignText(alignType) {
   var textWidth = gSelectedLine.txt.length
   gSelectedLine.textAlign = alignType
-  gSelectedLine.x =
+  gSelectedLine.pos.x =
     alignType === 'left' ? 0 : alignType === 'center' ? (gElCanvas.width - textWidth) / 2 : gElCanvas.width - textWidth
 }
 
 function addLine(count) {
-  var lineHight = gMeme.lines.length ? gSelectedLine.y + count : 100
-  var lineWidth = gMeme.lines.length ? gSelectedLine.x + count : 125
+  var lineHeight = gMeme.lines.length ? gSelectedLine.pos.y + count : 100
+  var lineWidth = gMeme.lines.length ? gSelectedLine.pos.x + count : 125
 
   lineWidth = lineWidth >= 400 ? 0 : lineWidth
-  lineHight = lineHight >= 450 ? 50 : lineHight
-  const newLine = setLineTxt('Hello World', lineHight, lineWidth)
+  lineHeight = lineHeight >= 450 ? 50 : lineHeight
+  const newLine = setLineTxt('Hello World', { x: lineWidth, y: lineHeight })
   gMeme.lines.push(newLine)
   gMeme.selectedLineIdx++
 }
