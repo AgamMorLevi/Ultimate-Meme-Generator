@@ -23,6 +23,7 @@ function renderMeme() {
   img.src = gSelectedImg
 
   img.onload = () => {
+    console.log('Image loaded successfully!')
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     renderLines()
@@ -30,9 +31,15 @@ function renderMeme() {
 }
 
 function resizeCanvas() {
+  const aspectRatio = 1 / 1
   const elContainer = document.querySelector('.canvas-container')
-  gElCanvas.width = elContainer.offsetWidth
-  gElCanvas.height = elContainer.offsetHeight
+  if (window.outerWidth > 768) {
+    gElCanvas.width = 500
+  } else {
+    gElCanvas.width = window.outerWidth - 22
+  }
+  console.log(gElCanvas.width)
+  gElCanvas.height = gElCanvas.width / aspectRatio
 }
 
 function renderLines() {
@@ -129,10 +136,39 @@ function onEmojiClick(emoji) {
 
 function openShereModal() {
   const modal = document.getElementById('shareModal')
-  modal.style.display = 'flex' // Show the modal
+  modal.style.display = 'flex'
 }
 
 function closeShereModal() {
   const modal = document.getElementById('shareModal')
-  modal.style.display = 'none' // Hide the modal
+  modal.style.display = 'none'
+}
+
+function downloadImg() {
+  const dataUrl = gElCanvas.toDataURL('image/png')
+
+  const elLink = document.createElement('a')
+  elLink.href = dataUrl
+  elLink.download = 'meme-image.png'
+  elLink.click()
+  closeShereModal()
+}
+function onImgInput(ev) {
+  loadImageFromInput(ev, renderImg)
+}
+function loadImageFromInput(ev, onImageReady) {
+  var reader = new FileReader()
+  reader.onload = function (event) {
+    var img = new Image()
+    img.onload = () => onImageReady(img)
+    img.src = event.target.result
+    gSelectedImg = img.src
+  }
+  reader.readAsDataURL(ev.target.files[0])
+}
+function renderImg(img) {
+  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+  gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+
+  renderLines()
 }

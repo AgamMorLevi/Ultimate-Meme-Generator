@@ -144,15 +144,20 @@
            
             <div class="share-container">
                 <button class="share-btn" onclick="openShereModal()" type="submit">Share</button>
-                 <!-- i will need to add save and download ? need to ask -->
-					<!-- <a href="#" data-trans="save" class="btn-save">Save</a> -->
-					<!-- <a href="#" data-trans="download" class="btn-download">Download</a> -->
+               
 				</div>
                 <div class="modal" id="shareModal">
                     <div class="modal-content">
                       <span class="close-btn" onclick="closeShereModal()">X</span>
-                      <button class="share-option">Share</button>
-                      <button class="download-option">Download</button>
+                      <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="share-option" type="submit">Shere</button>
+                      </form>
+                      <button class="download-option" onclick="downloadImg()">Download</button>
+                      <button class="file-input">Choose Img
+                      <input class="hiddeninput" role="button" type="file" name="image" onchange="onImgInput(event)" accept=".png" hidden />
+                    </button>
+                    </label>
                     </div>
                   </div>
 
@@ -172,7 +177,7 @@
     <script src="js/service/meme.evListeners.service.js"></script>
     <script src="js/service/storage.service.js"></script>
     <script src="js/service/util.service.js"></script>
-    <script src="js/service/upload.service.js"></script>
+
     <script src="js/service/gallery.js"></script>
     <script src="js/service/meme.service.js"></script>
     

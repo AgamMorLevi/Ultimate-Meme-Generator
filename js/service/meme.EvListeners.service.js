@@ -25,8 +25,8 @@ function onDown(ev) {
 
   if (isLineClicked(pos)) {
     gStartPos = pos
+    console.log(gMeme.selectedLineIdx)
   }
-  console.log(gMeme.selectedLineIdx)
 }
 
 function onMove(ev) {
@@ -54,7 +54,7 @@ function isLineClicked(pos) {
       pos.x >= line.pos.x &&
       pos.x <= line.pos.x + gCtx.measureText(line.txt).width &&
       pos.y >= line.pos.y - line.size &&
-      pos.y <= line.pos.y + line.size
+      pos.y <= line.pos.y
     )
   })
   if (line) {
@@ -72,7 +72,7 @@ function getEvPos(ev) {
     x: ev.offsetX,
     y: ev.offsetY,
   }
-  console.log(ev.offsetX, ev.offsetY)
+  // console.log(ev.offsetX, ev.offsetY)
 
   if (TOUCH_EVS.includes(ev.type)) {
     ev.preventDefault()
@@ -86,3 +86,6 @@ function getEvPos(ev) {
 
   return pos
 }
+
+document.querySelector('.file-input').addEventListener('click', () => document.querySelector('.hiddeninput').click())
+document.querySelector('.emoji-scroller').style.width = window.outerWidth - 128 + 'px'

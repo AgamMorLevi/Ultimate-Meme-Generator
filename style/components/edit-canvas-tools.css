@@ -95,15 +95,16 @@
   }
 
   .emoji-scroller {
-    width: 300px; 
-    height: 100px; 
-    overflow-x: hidden; 
-    white-space: nowrap; 
+    max-width: 300px;
+    overflow-x: hidden;
+    white-space: nowrap;
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     background-color: #f9f9f9;
     position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .emoji-container {
@@ -111,8 +112,11 @@
     display: inline-block;
     transition: scroll-behavior 0.3s ease; 
   }
+  .emoji-container span{
+    cursor: pointer;
+  }
 
-  .scroll-button {
+  .emoji-scroller-container .scroll-button {
     background-color: #ddd;
     border: none;
     border-radius: 50%;
@@ -120,6 +124,9 @@
     height: 40px;
     font-size: 1.5rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -137,15 +144,15 @@
   }
   
   /* Modal Content */
-  .modal-content 
+
 .modal-content {
-  background-color: white;
-  width: 80%;
-  max-width: 300px;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  position: relative;
+    background-color: white;
+    width: 80%;
+    max-width: 300px;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
 }
   
   /* Close Button */
@@ -170,7 +177,17 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
-  button.share-option:hover, button.download-option:hover {
+  .modal-content .file-input{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f7941e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ .btn-Share:hover, button.download-option:hover {
     background-color: #e6831a;
   }
