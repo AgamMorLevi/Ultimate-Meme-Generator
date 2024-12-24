@@ -27,6 +27,7 @@ function renderMeme() {
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     renderLines()
+    onDrewRect()
   }
 }
 
@@ -43,14 +44,38 @@ function resizeCanvas() {
 function renderLines() {
   gMeme.lines.forEach((line) => {
     gCtx.font = `${line.size}px ${line.font}`
+    gCtx.textAlign = line.textAlign
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = line.borderColor
     gCtx.lineWidth = line.borderWidth
-    gCtx.textAlign = line.textAlign
 
     gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
     gCtx.fillText(line.txt, line.pos.x, line.pos.y)
   })
+}
+
+function onDrewRect() {
+  // Measure text width
+  gCtx.font = `${gSelectedLine.size}px ${gSelectedLine.font}`
+  gCtx.textAlign = gSelectedLine.textAlign
+  const textMetrics = gCtx.measureText(gSelectedLine.txt)
+  const textWidth = textMetrics.width
+  const textHeight = gSelectedLine.size // Approximation of text height based on font size
+
+  // Adjust x position for alignment
+  let boxX = gSelectedLine.pos.x
+  if (gSelectedLine.textAlign === 'center') {
+    boxX -= textWidth / 2
+  } else if (gSelectedLine.textAlign === 'right') {
+    boxX -= textWidth
+  }
+
+  // Draw the rectangle (box)
+  gCtx.beginPath()
+  gCtx.strokeStyle = 'black'
+  gCtx.lineWidth = 2
+  gCtx.rect(boxX - 5, gSelectedLine.pos.y - textHeight, textWidth + 10, textHeight + 10)
+  gCtx.stroke()
 }
 
 function onAddTxt(inputElement) {

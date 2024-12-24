@@ -23,7 +23,6 @@ function getLine() {
 
 function updateLineSize(sizeChange) {
   gSelectedLine.size += sizeChange
-  gSelectedLine.borderWidth += sizeChange / 4
   if (gSelectedLine.size < 20) gSelectedLine.size = 20
   if (gSelectedLine.size > 100) gSelectedLine.size = 100
 
