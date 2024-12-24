@@ -18,21 +18,33 @@ main .meme-editor-container{
 }
 .main-nav {
     display: flex;
-    position: static;
     background-color: transparent;
     height: auto;
-    justify-content: flex-start;
+    grid-column: 2/-1;
+    position: unset;
+    justify-content: flex-end;
+    width: auto;
+    box-shadow: none;
+    overflow-x: unset;
 }
 .main-nav ul {
+    display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 0;
 }
 
 .main-nav ul li {
-    font-size: 1.25rem; 
-    height: auto; 
-    background-color: transparent; 
+    font-size: 1.25rem;
+    height: auto;
+    background-color: transparent;
     border-radius: 0;
+    width: 90px;
+    border-bottom:none;
+    cursor: pointer;
+}
+
+.main-nav ul li:first-child{
+    border-right: 2px solid white;
 }
 
 .main-nav .close-btn {
@@ -64,7 +76,6 @@ main .meme-editor-container{
 .meme-editor-container .edit-canvas-tools{
     font-size: 2.5rem;
     width: fit-content;
-    align-content: stretch;
     justify-items: center;
     gap: 0;
     justify-content: space-between;

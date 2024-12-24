@@ -17,3 +17,6 @@ section .image-gallery{
     padding: 0.1875rem;
 
 }
+.image-gallery img{
+    cursor: pointer;
+}

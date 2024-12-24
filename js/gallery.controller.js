@@ -33,3 +33,18 @@ function onSelectImage(imageId) {
     initCanvas(imgUrl)
   }
 }
+
+function moveToGallery() {
+  const homePageContainer = document.querySelector('.home-page-container')
+  const memeEditorContainer = document.querySelector('.meme-editor-container')
+
+  homePageContainer.style.display = 'grid'
+  memeEditorContainer.style.display = 'none'
+}
+
+function moveToAbout() {
+  const mainSocialInfo = document.querySelector('.main-social-info')
+  moveToGallery()
+
+  mainSocialInfo.scrollIntoView()
+}

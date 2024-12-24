@@ -12,13 +12,13 @@
 
     <header class="main-header full" >
         <img class="logo" src="img/logo.png" alt="logo">
-        <span class="hamburger"onclick="onOpenNavbar()">&#9776;</span>
-        <nav class="main-nav" id="mainNav" >
+        <span class="hamburger" onclick="onClickHumburger()">&#9776;</span>
+        <nav class="main-nav" id="mainNav" onclick="onClickHumburger()">
             <ul class="clean-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Gallery</a></li>
+                <li onclick="moveToGallery()">Gallery</li>
+                <li onclick="moveToAbout()">About</li>
             </ul>
-            <button class="close-btn" onclick="onCloseNavbar()">X</button>
+            <!-- <button class="close-btn" onclick="onCloseNavbar()">X</button> -->
         </nav>
     </header>
 

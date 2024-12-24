@@ -33,12 +33,7 @@ function _createImages() {
 function _saveImages() {
   saveToStorage(STORAGE_KEY, gImgs)
 }
-function onOpenNavbar() {
+function onClickHumburger() {
   const nav = document.getElementById('mainNav')
-  nav.style.display = 'flex'
-}
-
-function onCloseNavbar() {
-  const nav = document.getElementById('mainNav')
-  nav.style.display = 'none'
+  nav.classList.toggle('open')
 }

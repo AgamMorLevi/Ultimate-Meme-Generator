@@ -32,13 +32,11 @@ function renderMeme() {
 
 function resizeCanvas() {
   const aspectRatio = 1 / 1
-  const elContainer = document.querySelector('.canvas-container')
   if (window.outerWidth > 768) {
     gElCanvas.width = 500
   } else {
     gElCanvas.width = window.outerWidth - 22
   }
-  console.log(gElCanvas.width)
   gElCanvas.height = gElCanvas.width / aspectRatio
 }
 
@@ -153,9 +151,11 @@ function downloadImg() {
   elLink.click()
   closeShereModal()
 }
+
 function onImgInput(ev) {
   loadImageFromInput(ev, renderImg)
 }
+
 function loadImageFromInput(ev, onImageReady) {
   var reader = new FileReader()
   reader.onload = function (event) {
@@ -164,6 +164,8 @@ function loadImageFromInput(ev, onImageReady) {
     img.src = event.target.result
     gSelectedImg = img.src
   }
+
+  closeShereModal()
   reader.readAsDataURL(ev.target.files[0])
 }
 function renderImg(img) {

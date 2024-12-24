@@ -88,4 +88,5 @@ function getEvPos(ev) {
 }
 
 document.querySelector('.file-input').addEventListener('click', () => document.querySelector('.hiddeninput').click())
+
 document.querySelector('.emoji-scroller').style.width = window.outerWidth - 128 + 'px'
