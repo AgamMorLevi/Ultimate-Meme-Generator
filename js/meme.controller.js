@@ -126,3 +126,13 @@ function onEmojiClick(emoji) {
   addLine(0, emoji)
   renderMeme()
 }
+
+function openShereModal() {
+  const modal = document.getElementById('shareModal')
+  modal.style.display = 'flex' // Show the modal
+}
+
+function closeShereModal() {
+  const modal = document.getElementById('shareModal')
+  modal.style.display = 'none' // Hide the modal
+}

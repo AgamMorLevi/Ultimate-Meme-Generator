@@ -72,6 +72,7 @@ function getEvPos(ev) {
     x: ev.offsetX,
     y: ev.offsetY,
   }
+  console.log(ev.offsetX, ev.offsetY)
 
   if (TOUCH_EVS.includes(ev.type)) {
     ev.preventDefault()
