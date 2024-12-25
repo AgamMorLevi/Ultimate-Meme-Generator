@@ -11,7 +11,9 @@ function renderGallery() {
   const images = getMeme()
   const strHtmls = images.map(
     (image) => `
+    <div class="image-gallery-item">
             <img class="gallery-image" src="img/meme-img/${image.url}" onclick="onSelectImage('${image.id}')"/>
+            </div>
           `
   )
   const elimageGallery = document.querySelector('.image-gallery')

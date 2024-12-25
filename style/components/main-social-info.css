@@ -80,7 +80,7 @@
     position: absolute;
     width: 27px;
     height: 25px;
-   background-image: url('/img/ICONS/linkedin-logo.png');
+   background-image: url('img/ICONS/linkedin-logo.png');
 }
 .social-links .btn-linkdin:hover {
    background: var(--clr-linkdin);
@@ -91,7 +91,7 @@
     position: absolute;
     width: 13px;
     height: 25px;
-   background-image: url('/img/ICONS/facebook-logo\ copy\ 2.png');
+   background-image: url('img/ICONS/facebook-logo\ copy\ 2.png');
 }
 .social-links .btn-facebook:hover {
    background: var(--clr-facebook);
@@ -103,7 +103,7 @@
     position: absolute;
     width: 25px;
     height: 25px;
-   background-image: url('/img/ICONS/github-logo.png');
+   background-image: url('img/ICONS/github-logo.png');
 }
 .social-links .btn-gitub:hover {
    background: var(--clr-github);

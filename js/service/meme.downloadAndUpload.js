@@ -31,6 +31,7 @@ function loadImageFromInput(ev, onImageReady) {
     img.onload = () => onImageReady(img)
     img.src = event.target.result
     gSelectedImg = img.src
+    renderMeme()
   }
 
   closeShereModal()
@@ -52,7 +53,6 @@ function onUploadImg(ev) {
     const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
     console.log('encodedUploadedImgUrl:', encodedUploadedImgUrl)
     document.querySelector('.share-option').innerHTML = `
-    
         <button class="btn-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
            Share on Facebook  
         </button>`

@@ -109,6 +109,11 @@ function getEvPos(ev) {
   return pos
 }
 
-document.querySelector('.file-input').addEventListener('click', () => document.querySelector('.hiddeninput').click())
+function onChooseImgPicker() {
+  document.querySelector('.hiddeninput').click()
+}
 
-document.querySelector('.emoji-scroller').style.width = window.outerWidth - 128 + 'px'
+function geteEmojiScrollerWidth() {
+  const emojiScroller = document.querySelector('.emoji-scroller')
+  emojiScroller.style.width = window.outerWidth - 128 + 'px'
+}

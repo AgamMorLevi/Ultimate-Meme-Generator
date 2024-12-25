@@ -10,9 +10,9 @@ const input = document.querySelector('.text-input')
 
 function initCanvas(imgUrl) {
   gSelectedImg = imgUrl
+  geteEmojiScrollerWidth()
   renderMeme()
   addListeners()
-  resizeCanvas()
 }
 
 function renderMeme() {
@@ -23,8 +23,8 @@ function renderMeme() {
   img.src = gSelectedImg
 
   img.onload = () => {
-    console.log('Image loaded successfully!')
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+    resizeCanvas()
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     renderLines()
     onDrewRect()
@@ -32,13 +32,17 @@ function renderMeme() {
 }
 
 function resizeCanvas() {
-  const aspectRatio = 1 / 1
+  const img = new Image()
+  img.src = gSelectedImg
   if (window.outerWidth > 768) {
     gElCanvas.width = 500
   } else {
     gElCanvas.width = window.outerWidth - 22
   }
-  gElCanvas.height = gElCanvas.width / aspectRatio
+
+  const canvasHeight = (img.height * gElCanvas.width) / img.width
+  console.log(img.height, 'gSelectedImg.height')
+  gElCanvas.height = canvasHeight
 }
 
 function renderLines() {

@@ -105,10 +105,10 @@ main .meme-editor-container{
     font-size: 20.7875px;
         
 }
-
-.main-content .image-gallery {    
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+section .image-gallery{
+    column-count: 8;
 }
+
 
 .main-social-info {
     display: flex;
@@ -148,7 +148,8 @@ main .meme-editor-container{
     text-align: start; 
         
 }
-   
+
+
 }
 
 

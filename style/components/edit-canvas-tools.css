@@ -68,7 +68,7 @@
     width: 123px;
     height: 42px;
     font-size: 16px;
-    background-color: #ff7f00;
+    background-color:#fe9d8ce3;
     color:rgba(255,255,255,1);
    
 
@@ -166,12 +166,13 @@
     cursor: pointer;
   }
   
-  button.share-option, button.download-option {
+ 
+  button.share-option, button.download-option, .btn-facebook {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
-    background-color: #f7941e;
+    background-color: #e7d362;
     color: white;
     border: none;
     border-radius: 5px;
@@ -182,7 +183,7 @@
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
-    background-color: #f7941e;
+    background-color: #e7d362;
     color: white;
     border: none;
     border-radius: 5px;
@@ -190,4 +191,9 @@
   }
  .btn-Share:hover, button.download-option:hover {
     background-color: #e6831a;
+  }
+  .btn-facebook{
+    margin:  0;
+    padding: 0;
+  
   }
