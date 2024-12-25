@@ -80,3 +80,14 @@ function deleteLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
   }
 }
+
+function selectFont(event) {
+  const selectedFont = event.target.value
+  gSelectedLine.font = selectedFont
+}
+
+function switchLine() {
+  gMeme.selectedLineIdx > 0 ? gMeme.selectedLineIdx-- : (gMeme.selectedLineIdx = gMeme.lines.length - 1)
+  gSelectedLine = gMeme.lines[gMeme.selectedLineIdx]
+  input.value = gSelectedLine.txt
+}

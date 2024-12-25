@@ -5,7 +5,7 @@ var gCtx
 var gSelectedImg
 var gSelectedLine
 var gStartPos
-const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+
 const input = document.querySelector('.text-input')
 
 function initCanvas(imgUrl) {
@@ -54,30 +54,6 @@ function renderLines() {
   })
 }
 
-function onDrewRect() {
-  // Measure text width
-  gCtx.font = `${gSelectedLine.size}px ${gSelectedLine.font}`
-  gCtx.textAlign = gSelectedLine.textAlign
-  const textMetrics = gCtx.measureText(gSelectedLine.txt)
-  const textWidth = textMetrics.width
-  const textHeight = gSelectedLine.size // Approximation of text height based on font size
-
-  // Adjust x position for alignment
-  let boxX = gSelectedLine.pos.x
-  if (gSelectedLine.textAlign === 'center') {
-    boxX -= textWidth / 2
-  } else if (gSelectedLine.textAlign === 'right') {
-    boxX -= textWidth
-  }
-
-  // Draw the rectangle (box)
-  gCtx.beginPath()
-  gCtx.strokeStyle = 'black'
-  gCtx.lineWidth = 2
-  gCtx.rect(boxX - 5, gSelectedLine.pos.y - textHeight, textWidth + 10, textHeight + 10)
-  gCtx.stroke()
-}
-
 function onAddTxt(inputElement) {
   if (gMeme.lines.length) {
     addTxt(inputElement)
@@ -95,15 +71,13 @@ function onUpdateLineSize(sizeChange) {
 function onSelectFont() {
   const fontSelector = document.querySelector('.font-selector')
   fontSelector.addEventListener('change', (event) => {
-    const selectedFont = event.target.value
-    gSelectedLine.font = selectedFont
+    selectFont(event)
     renderMeme()
   })
 }
 
 function onPickColor(type) {
   const elColorSelect = document.querySelector(type === 'border' ? '.border-color-select' : '.color-select')
-
   elColorSelect.addEventListener('input', (event) => {
     if (type === 'border') {
       gSelectedLine.borderColor = event.target.value
@@ -112,7 +86,6 @@ function onPickColor(type) {
     }
     renderMeme()
   })
-
   elColorSelect.click()
 }
 
@@ -136,14 +109,11 @@ function onDeleteLine() {
   } else {
     input.value = ''
   }
-
   renderMeme()
 }
 
 function onSwitchLine() {
-  gMeme.selectedLineIdx > 0 ? gMeme.selectedLineIdx-- : (gMeme.selectedLineIdx = gMeme.lines.length - 1)
-  gSelectedLine = gMeme.lines[gMeme.selectedLineIdx]
-  input.value = gSelectedLine.txt
+  switchLine()
   renderMeme()
 }
 
@@ -155,47 +125,4 @@ function OnScroll(side) {
 function onEmojiClick(emoji) {
   addLine(0, emoji)
   renderMeme()
-}
-
-function openShereModal() {
-  const modal = document.getElementById('shareModal')
-  modal.style.display = 'flex'
-}
-
-function closeShereModal() {
-  const modal = document.getElementById('shareModal')
-  modal.style.display = 'none'
-}
-
-function downloadImg() {
-  const dataUrl = gElCanvas.toDataURL('image/png')
-
-  const elLink = document.createElement('a')
-  elLink.href = dataUrl
-  elLink.download = 'meme-image.png'
-  elLink.click()
-  closeShereModal()
-}
-
-function onImgInput(ev) {
-  loadImageFromInput(ev, renderImg)
-}
-
-function loadImageFromInput(ev, onImageReady) {
-  var reader = new FileReader()
-  reader.onload = function (event) {
-    var img = new Image()
-    img.onload = () => onImageReady(img)
-    img.src = event.target.result
-    gSelectedImg = img.src
-  }
-
-  closeShereModal()
-  reader.readAsDataURL(ev.target.files[0])
-}
-function renderImg(img) {
-  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-  gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-
-  renderLines()
 }

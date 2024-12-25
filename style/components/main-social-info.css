@@ -93,7 +93,7 @@
     height: 25px;
    background-image: url('/img/ICONS/facebook-logo\ copy\ 2.png');
 }
-.social-links .facebook:hover {
+.social-links .btn-facebook:hover {
    background: var(--clr-facebook);
 }
 

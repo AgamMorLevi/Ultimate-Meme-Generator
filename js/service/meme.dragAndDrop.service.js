@@ -1,4 +1,5 @@
 'use strict'
+const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 
 function addListeners() {
   addMouseListeners()
@@ -18,6 +19,27 @@ function addTouchListeners() {
   gElCanvas.addEventListener('touchstart', onDown)
   gElCanvas.addEventListener('touchmove', onMove)
   gElCanvas.addEventListener('touchend', onUp)
+}
+
+function onDrewRect() {
+  gCtx.font = `${gSelectedLine.size}px ${gSelectedLine.font}`
+  gCtx.textAlign = gSelectedLine.textAlign
+  const textMetrics = gCtx.measureText(gSelectedLine.txt)
+  const textWidth = textMetrics.width
+  const textHeight = gSelectedLine.size
+
+  let boxX = gSelectedLine.pos.x
+  if (gSelectedLine.textAlign === 'center') {
+    boxX -= textWidth / 2
+  } else if (gSelectedLine.textAlign === 'right') {
+    boxX -= textWidth
+  }
+
+  gCtx.beginPath()
+  gCtx.strokeStyle = 'black'
+  gCtx.lineWidth = 2
+  gCtx.rect(boxX - 5, gSelectedLine.pos.y - textHeight, textWidth + 10, textHeight + 10)
+  gCtx.stroke()
 }
 
 function onDown(ev) {
