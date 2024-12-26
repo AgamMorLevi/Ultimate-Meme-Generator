@@ -1,14 +1,15 @@
 'use strict'
 
 var selectedImage
+let selectedCategory = 'all'
 
 function onInit() {
   _createImages()
-  renderGallery()
+  renderGallery(gImgs)
 }
 
-function renderGallery() {
-  const images = getMeme()
+function renderGallery(images) {
+  console.log(images)
   const strHtmls = images.map(
     (image) => `
     <div class="image-gallery-item">
@@ -49,4 +50,39 @@ function moveToAbout() {
   moveToGallery()
 
   mainSocialInfo.scrollIntoView()
+}
+
+function onEnterSearch(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault()
+    const searchTerm = event.target.value.toLowerCase()
+    filterImages(searchTerm, selectedCategory)
+  }
+}
+
+function onSearch() {
+  const searchTerm = document.getElementById('search-input').value.toLowerCase()
+  filterImages(searchTerm, selectedCategory)
+}
+
+function onCategoryClick(category) {
+  selectedCategory = category
+  const searchTerm = document.getElementById('search-input').value.toLowerCase()
+  filterImages(searchTerm, selectedCategory)
+}
+
+function filterImages(searchTerm, category) {
+  let filteredImgs = gImgs
+
+  if (category !== 'all') {
+    filteredImgs = filteredImgs.filter((img) => img.keywords.some((keyword) => keyword.toLowerCase() === category))
+  }
+
+  if (searchTerm) {
+    filteredImgs = filteredImgs.filter((img) =>
+      img.keywords.some((keyword) => keyword.toLowerCase().includes(searchTerm))
+    )
+  }
+
+  renderGallery(filteredImgs)
 }

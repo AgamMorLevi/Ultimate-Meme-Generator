@@ -1,7 +1,9 @@
 .main-search{
     margin-top: 0;
     display: grid;
-    grid-template-rows: 1fr 1fr;  
+    grid-template-rows: 1fr 1fr;
+    padding: 18px 0 0;
+    gap: 10px; 
 }
 .main-search form{
     position: relative;
@@ -9,17 +11,22 @@
     align-content: center;
     justify-self: center;
 }
- .main-search form input{
-border: none;
-border-bottom: 1px solid black;
+ .main-search form input{ 
+        width: 100%;
+        height: 43px;
+        background-color: rgba(255,255,255,1);
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+        padding: 13px;  
 }
 
 .main-search form img{
     position: absolute;
     width: 19.6px;
     height: 18.1px;
-    right: 4px;
-    top: 12px;
+    right: 7px;
+    top: 14px;
     }
 
 
@@ -28,10 +35,12 @@ border-bottom: 1px solid black;
 .categories-container{
     grid-row: 2;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
 }
 
-.categories-container button{
-    background-color: transparent;
-    border: none;
+.category{
+    cursor: pointer;
 }
+

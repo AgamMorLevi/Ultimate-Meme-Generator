@@ -28,18 +28,28 @@
     <div class="main-search">
     <form autocomplete="off">        
             <!-- <input id="search" type="text" oninput="onSearch(this.value)" placeholder="Search by title..." /> -->
-            <input id="search" type="text" placeholder="Enter search keyword" />
-            <img class="search" src="img/ICONS/search-icon.png" />
+            <input id="search-input" class="search" type="text" placeholder="Enter search keyword"  onkeydown="onEnterSearch(event)"/>
+            <img src="img/ICONS/search-icon.png" onclick="onSearch()"/>
 
     </form>
-            <!-- <select onchange="onSelectRating(this.value)"> -->
-            
+            <!-- <select onchange="onSelectRating(this.value)"> -->      
+                 
                 <div class="categories-container">
-                <button value="funny">funny</button> 
-                <button value="comics">comics</button>      
-                 <button value="dogs">dogs</button>
-                 <button value="baby">baby</button>
-                 <button value="more">more..</button>                    
+                    <div class="category" data-value="all" onclick="onCategoryClick('all')">all</div>                  
+                    <div class="category" data-value="funny" onclick="onCategoryClick('funny')">funny</div>
+                    <div class="category" data-value="money" onclick="onCategoryClick('money')">money</div>
+                    <div class="category" data-value="cute" onclick="onCategoryClick('cute')">cute</div>
+                    <div class="category" data-value="stoned" onclick="onCategoryClick('stoned')">stoned</div>
+                    <select class="category">
+                        <option>sadsad</option>
+                        <option>sadsadsad</option>
+                        <option>sadsads</option>
+                        <option>sadsad</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+
+                    </select>
                 </div>
     </div>
     <div class="main-content">
@@ -51,17 +61,16 @@
             <img class="info-img" src="img/info.png" alt="Monica Geller img">
         </div>
         <div class="person-detailes">
-        <h4>Monica Geller</h4>
+        <h4>SpongeBob SquarePants</h4>
         <p class="info-text">
-            is a fictional character,
-            one of the six main characters who appears on the American sitcom Friends (1994–2004). 
-            Created by David Crane and Marta Kauffman
+            is an American animated television series
+            created by marine science educator and animator Stephen Hillenburg for Nickelodeon. 
         </p>
-        <!-- <ul class="social-links clean-list ">
+        <ul class="social-links clean-list ">
             <li><button class="btn-linkdin"><a href="https://www.linkedin.com/home"></a></button></li>
             <li><button class="btn-facebook"><a href="https://www.facebook.com/"></a></button></li>
             <li><button class="btn-gitub"><a href="https://www.github.com/"></a></button></li>
-        </ul> -->
+        </ul>
     </div>
         
     </div>
@@ -170,7 +179,7 @@
 </main>
     <footer class="main-footer full">
         <img class="logo"src="img/logo.png" alt="logo">
-        <div class="footer-text">© all rights reserved 2019 </div>
+        <div class="footer-text">© All rights reserved to the city of Bikini Bottom © </div>
      
     </footer>
     <script src="js/service/gallery.service.js"></script>

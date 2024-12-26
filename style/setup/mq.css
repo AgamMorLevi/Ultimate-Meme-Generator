@@ -1,5 +1,8 @@
 /* Desktop */
 @media screen and (min-width: 768px) {
+    .main-layout {
+        grid-template-rows: 8.3rem 1fr 13.125rem;
+    }
 
 main .meme-editor-container{
     height: 100%;
@@ -50,6 +53,24 @@ main .meme-editor-container{
 .main-nav .close-btn {
     display: none;
 }
+.main-search form {
+    justify-self: self-start;
+    margin-left: 24px;
+}
+
+.categories-container {
+    display: flex;
+    gap: 2rem;
+    padding: 0 28px;
+}
+
+.home-page-container {
+    grid-template-rows: 9rem 1fr 25.125rem;
+}
+.main-search {
+    padding: 35px 0 0;
+    font-size: 28px;
+}
 
 .main-content .meme-editor-container{
     font-size: 2.5rem;
@@ -96,9 +117,7 @@ main .meme-editor-container{
     
 
 .main-header .logo {
-    width: 9.1125rem;
-    height: 1.375rem;
-       
+    width: 9.1125rem;    
 }
 
 .main-footer .footer-text {
@@ -114,16 +133,13 @@ section .image-gallery{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5rem;
 
 }
 
 .main-footer .main-social-info>*{
     align-items: center;
     justify-self: center;
-}
-
-.main-social-info img {
-    bottom: 7px;
 }
 
 .person-detailes {
@@ -136,7 +152,6 @@ section .image-gallery{
     font-size: 25px;
     position: unset; 
     transform:none;
-    color: rgba(0, 0, 0, 1);
 }
 
 .person-detailes p {
@@ -149,7 +164,9 @@ section .image-gallery{
         
 }
 
-
+.main-social-info .person-container img{
+    position: unset;
+}
 }
 
 

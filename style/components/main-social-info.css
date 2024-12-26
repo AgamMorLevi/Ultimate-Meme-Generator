@@ -16,13 +16,10 @@
     width: 10.625rem;
     height: 13.07rem;
 }
-.main-social-info img{
-    position: absolute;
-    bottom: -27px;
-    margin: 0;
-    transform: rotate(0deg);
+.main-social-info .person-container img{
+position: absolute;
+top: 30px;
 }
-
 .person-detailes{
     display: flex;
     flex-direction: column;
@@ -31,10 +28,10 @@
 }
 
 .person-detailes h4{  
-       /* font-family: "Montserrat-Bold"; */
-    font-size: 1.375rem;
-    margin-bottom: 10px;
-    color: rgba(255, 127.00274999999999, 0, 1);          
+     /* font-family: "Montserrat-Bold"; */
+     font-size: 1.375rem;
+     margin-bottom: 10px;
+     color: rgb(238 134 131);       
 }
 
 .person-detailes p{
@@ -56,7 +53,7 @@
 .social-links button {
     width: 2.625rem;
     height: 2.563rem;
-    background: rgba(255, 127.00274999999999, 0, 1);
+    background: rgb(238 134 131);
     border-radius: 15px;
     border: none;
     cursor: pointer;
@@ -80,7 +77,7 @@
     position: absolute;
     width: 27px;
     height: 25px;
-   background-image: url('img/ICONS/linkedin-logo.png');
+   background-image: url('../../img/ICONS/linkedin.png');
 }
 .social-links .btn-linkdin:hover {
    background: var(--clr-linkdin);
@@ -91,7 +88,7 @@
     position: absolute;
     width: 13px;
     height: 25px;
-   background-image: url('img/ICONS/facebook-logo\ copy\ 2.png');
+   background-image: url('../../img/ICONS/facebook.png');
 }
 .social-links .btn-facebook:hover {
    background: var(--clr-facebook);
@@ -103,7 +100,7 @@
     position: absolute;
     width: 25px;
     height: 25px;
-   background-image: url('img/ICONS/github-logo.png');
+   background-image: url('../../img/ICONS/github.png');
 }
 .social-links .btn-gitub:hover {
    background: var(--clr-github);
