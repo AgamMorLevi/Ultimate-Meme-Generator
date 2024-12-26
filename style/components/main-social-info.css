@@ -28,19 +28,20 @@ top: 30px;
 }
 
 .person-detailes h4{  
-     /* font-family: "Montserrat-Bold"; */
+     font-family: "Montserrat-Bold";
      font-size: 1.375rem;
      margin-bottom: 10px;
      color: rgb(238 134 131);       
 }
 
+
+    
 .person-detailes p{
-/* font-family: "Montserrat-Regular"; */
+    font-family: Montserrat-thin;
     width: 17.07rem;
     height: 5.25rem;
-    font-size: 0.9375rem;
     text-align: center;
-    color: rgba(0, 0, 0, 1);
+    color: rgb(0, 0, 0);
 }
 
 

@@ -41,7 +41,7 @@ main .meme-editor-container{
     height: auto;
     background-color: transparent;
     border-radius: 0;
-    width: 90px;
+    width: 118px;
     border-bottom:none;
     cursor: pointer;
 }
@@ -63,13 +63,20 @@ main .meme-editor-container{
     gap: 2rem;
     padding: 0 28px;
 }
-
+.category-select{
+        font-size: 28px;
+        color: gray;
+}
 .home-page-container {
     grid-template-rows: 9rem 1fr 25.125rem;
 }
 .main-search {
     padding: 35px 0 0;
     font-size: 28px;
+    display: flex;
+}
+.main-search form img {
+    top: 46px;
 }
 
 .main-content .meme-editor-container{

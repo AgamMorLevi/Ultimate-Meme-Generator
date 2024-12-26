@@ -48,10 +48,8 @@ function onUploadImg(ev) {
   ev.preventDefault()
   const canvasData = gElCanvas.toDataURL('image/jpeg')
 
-  // After a succesful upload, allow the user to share on Facebook
   function onSuccess(uploadedImgUrl) {
     const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-    console.log('encodedUploadedImgUrl:', encodedUploadedImgUrl)
     document.querySelector('.share-option').innerHTML = `
         <button class="btn-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
            Share on Facebook  
@@ -72,9 +70,6 @@ async function uploadImg(imgData, onSuccess) {
       body: formData,
     })
     const data = await res.json()
-    console.log('Cloudinary response:', data)
     onSuccess(data.secure_url)
-  } catch (err) {
-    console.log(err)
-  }
+  } catch (err) {}
 }

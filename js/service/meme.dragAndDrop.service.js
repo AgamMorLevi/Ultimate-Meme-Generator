@@ -47,7 +47,6 @@ function onDown(ev) {
 
   if (isLineClicked(pos)) {
     gStartPos = pos
-    console.log(gMeme.selectedLineIdx)
   }
 }
 
@@ -69,8 +68,6 @@ function onUp(ev) {
 }
 
 function isLineClicked(pos) {
-  //const line = gSelectedLine
-
   const line = gMeme.lines.find((line) => {
     return (
       pos.x >= line.pos.x &&
@@ -94,7 +91,6 @@ function getEvPos(ev) {
     x: ev.offsetX,
     y: ev.offsetY,
   }
-  // console.log(ev.offsetX, ev.offsetY)
 
   if (TOUCH_EVS.includes(ev.type)) {
     ev.preventDefault()

@@ -5,7 +5,7 @@ var gMeme = {
   selectedLineIdx: 0,
   lines: [
     {
-      txt: 'Hello World',
+      txt: 'Enter Funny Text',
       size: 30,
       color: '#000000',
       font: 'Arial',
@@ -30,7 +30,7 @@ function updateLineSize(sizeChange) {
 }
 
 function setLineTxt(
-  txt = 'Hello World',
+  txt = 'Enter Funny Text',
   pos = { x: 125, y: 100 },
   size = 30,
   color = '#000000',
@@ -63,7 +63,7 @@ function alignText(alignType) {
     alignType === 'left' ? 0 : alignType === 'center' ? (gElCanvas.width - textWidth) / 2 : gElCanvas.width - textWidth
 }
 
-function addLine(count, text = 'Hello World') {
+function addLine(count, text = 'Enter Funny Text') {
   var lineHeight = gMeme.lines.length ? gSelectedLine.pos.y + count : 100
   var lineWidth = gMeme.lines.length ? gSelectedLine.pos.x + count : 125
 
@@ -72,7 +72,6 @@ function addLine(count, text = 'Hello World') {
   const newLine = setLineTxt(text, { x: lineWidth, y: lineHeight })
   gMeme.lines.push(newLine)
   gMeme.selectedLineIdx = gMeme.lines.length - 1
-  console.log(gMeme.selectedLineIdx)
 }
 
 function deleteLine() {

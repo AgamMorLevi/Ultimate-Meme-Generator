@@ -9,7 +9,6 @@ function onInit() {
 }
 
 function renderGallery(images) {
-  console.log(images)
   const strHtmls = images.map(
     (image) => `
     <div class="image-gallery-item">
@@ -75,7 +74,9 @@ function filterImages(searchTerm, category) {
   let filteredImgs = gImgs
 
   if (category !== 'all') {
-    filteredImgs = filteredImgs.filter((img) => img.keywords.some((keyword) => keyword.toLowerCase() === category))
+    filteredImgs = filteredImgs.filter((img) =>
+      img.keywords.some((keyword) => keyword.toLowerCase() === category.toLowerCase())
+    )
   }
 
   if (searchTerm) {

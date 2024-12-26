@@ -41,7 +41,6 @@ function resizeCanvas() {
   }
 
   const canvasHeight = (img.height * gElCanvas.width) / img.width
-  console.log(img.height, 'gSelectedImg.height')
   gElCanvas.height = canvasHeight
 }
 
