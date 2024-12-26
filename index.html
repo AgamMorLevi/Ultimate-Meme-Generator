@@ -18,7 +18,6 @@
                 <li onclick="moveToGallery()">Gallery</li>
                 <li onclick="moveToAbout()">About</li>
             </ul>
-            <!-- <button class="close-btn" onclick="onCloseNavbar()">X</button> -->
         </nav>
     </header>
 
@@ -27,12 +26,10 @@
 
     <div class="main-search">
     <form autocomplete="off">        
-            <!-- <input id="search" type="text" oninput="onSearch(this.value)" placeholder="Search by title..." /> -->
             <input id="search-input" class="search" type="text" placeholder="Enter search keyword"  onkeydown="onEnterSearch(event)"/>
             <img src="img/ICONS/search-icon.png" onclick="onSearch()"/>
 
     </form>
-            <!-- <select onchange="onSelectRating(this.value)"> -->      
                  
                 <div class="categories-container">
                     
@@ -185,7 +182,7 @@
 </main>
     <footer class="main-footer full">
         <img class="logo"src="img/logo.png" alt="logo">
-        <div class="footer-text">© All rights reserved to the city of Bikini Bottom © </div>
+        <div class="footer-text">© All rights reserved to Bikini Bottom © </div>
      
     </footer>
     <script src="js/service/gallery.service.js"></script>
