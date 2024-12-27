@@ -132,7 +132,7 @@ function onEmojiClick(emoji) {
 
 function preventDefaultOnbtns() {
   document.querySelectorAll('.edit-canvas-tools button').forEach((button) => {
-    button.addEventListener('touchstart', (ev) => {
+    button.addEventListener('click', (ev) => {
       ev.preventDefault()
     })
   })
