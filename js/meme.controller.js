@@ -13,6 +13,7 @@ function initCanvas(imgUrl) {
   geteEmojiScrollerWidth()
   renderMeme()
   addListeners()
+  preventZoomOnMobile()
 }
 
 function renderMeme() {
@@ -128,12 +129,4 @@ function OnScroll(side) {
 function onEmojiClick(emoji) {
   addLine(0, emoji)
   renderMeme()
-}
-
-function preventDefaultOnbtns() {
-  document.querySelectorAll('.edit-canvas-tools button').forEach((button) => {
-    button.addEventListener('click', (ev) => {
-      ev.preventDefault()
-    })
-  })
 }
