@@ -13,7 +13,6 @@ function initCanvas(imgUrl) {
   geteEmojiScrollerWidth()
   renderMeme()
   addListeners()
-  preventZoomOnMobile()
 }
 
 function renderMeme() {

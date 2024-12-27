@@ -90,11 +90,3 @@ function switchLine() {
   gSelectedLine = gMeme.lines[gMeme.selectedLineIdx]
   input.value = gSelectedLine.txt
 }
-// function preventZoomOnMobile() {
-//   const buttons = document.querySelectorAll('.edit-canvas-tools button')
-//   buttons.forEach((button) => {
-//     button.addEventListener('touchstart', (event) => {
-//       event.preventDefault()
-//     })
-//   })
-// }
