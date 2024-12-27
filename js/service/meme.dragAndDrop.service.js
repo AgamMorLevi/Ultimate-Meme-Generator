@@ -10,8 +10,8 @@ function addListeners() {
 }
 
 function addMouseListeners() {
-  gElCanvas.addEventListener('mousedown', onDown)
-  gElCanvas.addEventListener('mousemove', onMove)
+  gElCanvas.addEventListener('mousedown', onDown, { passive: false })
+  gElCanvas.addEventListener('mousemove', onMove, { passive: false })
   gElCanvas.addEventListener('mouseup', onUp)
 }
 
@@ -47,20 +47,23 @@ function onDown(ev) {
 
   if (isLineClicked(pos)) {
     gStartPos = pos
+    ev.preventDefault()
   }
 }
 
 function onMove(ev) {
-  const pos = getEvPos(ev)
+  if (!gStartPos) return
 
-  if (gStartPos) {
-    const dx = pos.x - gStartPos.x
-    const dy = pos.y - gStartPos.y
-    gSelectedLine.pos.x += dx
-    gSelectedLine.pos.y += dy
-    gStartPos = pos
-    renderMeme()
-  }
+  const pos = getEvPos(ev)
+  const dx = pos.x - gStartPos.x
+  const dy = pos.y - gStartPos.y
+
+  gSelectedLine.pos.x += dx
+  gSelectedLine.pos.y += dy
+  gStartPos = pos
+  renderMeme()
+
+  ev.preventDefault()
 }
 
 function onUp(ev) {
@@ -93,8 +96,6 @@ function getEvPos(ev) {
   }
 
   if (TOUCH_EVS.includes(ev.type)) {
-    ev.preventDefault()
-
     ev = ev.changedTouches[0]
     pos = {
       x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
