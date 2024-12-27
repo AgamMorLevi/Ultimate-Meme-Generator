@@ -16,6 +16,7 @@
 }
 
 .edit-canvas-tools > div > button{
+  touch-action: manipulation;
     cursor: pointer;
     width: 43px;
     height: 42px;

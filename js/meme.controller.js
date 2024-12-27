@@ -129,3 +129,11 @@ function onEmojiClick(emoji) {
   addLine(0, emoji)
   renderMeme()
 }
+
+function preventDefaultOnbtns() {
+  document.querySelectorAll('.edit-canvas-tools button').forEach((button) => {
+    button.addEventListener('touchstart', (ev) => {
+      ev.preventDefault()
+    })
+  })
+}
