@@ -41,6 +41,7 @@
     gap: 0.4rem;
     justify-items: center;
     padding: 0 17px;
+    overflow: scroll;
 }
 
 .category{
@@ -49,6 +50,10 @@
 
 .category-select{
     font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    color: var(--clr-primary);
     border-radius: 8px;
     padding: 2px;
+    border: none;
+    background: none;
 }

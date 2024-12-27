@@ -62,10 +62,11 @@ main .meme-editor-container{
     display: flex;
     gap: 2rem;
     padding: 0 28px;
+    overflow: overlay;
 }
 .category-select{
         font-size: 28px;
-        color: gray;
+       
 }
 .home-page-container {
     grid-template-rows: 9rem 1fr 25.125rem;

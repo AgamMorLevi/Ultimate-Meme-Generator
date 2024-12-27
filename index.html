@@ -34,6 +34,7 @@
                 <div class="categories-container">
                     
                     <select class="category-select category" onchange="onCategoryClick(this.value)">
+                        <option hidden>select Option</option>
                         <option value="all">all</option>
                         <option value="spongebob">spongebob</option>
                         <option value="buttock">buttock</option>
@@ -49,10 +50,12 @@
                         <option value="Squidward">Squidward</option>
 
                     </select>
-                    <div class="category" data-value="funny" onclick="onCategoryClick('funny')">funny</div>
-                    <div class="category" data-value="money" onclick="onCategoryClick('money')">money</div>
-                    <div class="category" data-value="cute" onclick="onCategoryClick('cute')">cute</div>
-                    <div class="category" data-value="stoned" onclick="onCategoryClick('stoned')">stoned</div>
+                 
+                        <div class="category" data-value="funny" onclick="onCategoryClick('funny'); onOptionClick('funny')">funny</div>
+                        <div class="category" data-value="money" onclick="onCategoryClick('money'); onOptionClick('money')">money</div>
+                        <div class="category" data-value="cute" onclick="onCategoryClick('cute'); onOptionClick('cute')">cute</div>
+                        <div class="category" data-value="stoned" onclick="onCategoryClick('stoned'); onOptionClick('stoned')">stoned</div>
+         
                 </div>
     </div>
     <div class="main-content">
