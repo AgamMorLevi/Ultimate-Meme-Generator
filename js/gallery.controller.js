@@ -48,6 +48,7 @@ function onSelectImage(imageId) {
   const selectedImage = gImgs.find((img) => img.id === imageId)
 
   if (selectedImage) {
+    resetMeme()
     homePageContainer.style.display = 'none'
     savedPageContainer.style.display = 'none'
     memeEditorContainer.style.display = window.innerWidth < 764 ? 'grid' : 'flex'

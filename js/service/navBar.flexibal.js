@@ -27,6 +27,7 @@ function rendomeMeme() {
 }
 
 function OnCreateRendomMeme() {
+  resetMeme()
   const memeEditorContainer = document.querySelector('.meme-editor-container')
   const homePageContainer = document.querySelector('.home-page-container')
 
@@ -37,5 +38,6 @@ function OnCreateRendomMeme() {
 
   const randomImageUrl = `img/meme-img/${randomImage.url}`
   gMeme.lines[0].txt = randomLine
-  ;(gMeme.lines[0].pos = { x: 0, y: 50 }), initCanvas(randomImageUrl)
+  gMeme.lines[0].pos = { x: 0, y: 50 }
+  initCanvas(randomImageUrl)
 }

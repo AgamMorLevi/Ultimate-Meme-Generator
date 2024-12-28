@@ -6,6 +6,24 @@ const STORAGE_KEY = 'memeImages'
 function getMeme() {
   return gImgs
 }
+function resetMeme() {
+  gMeme = {
+    selectedImgId: 5,
+    selectedLineIdx: 0,
+    lines: [
+      {
+        txt: 'Enter Funny Text',
+        size: 30,
+        color: '#000000',
+        font: 'Arial',
+        borderColor: '#FFFFFF',
+        borderWidth: 5,
+        textAlign: 'left',
+        pos: { x: 125, y: 100 },
+      },
+    ],
+  }
+}
 
 function _createImg(image) {
   return { id: makeId(), url: image.url, keywords: image.keywords }

@@ -6,6 +6,7 @@ function onClickHumburger() {
 }
 
 function moveToGallery() {
+  resetMeme()
   const homePageContainer = document.querySelector('.home-page-container')
   const memeEditorContainer = document.querySelector('.meme-editor-container')
   const savedPageContainer = document.querySelector('.saved-page-container')
@@ -16,6 +17,7 @@ function moveToGallery() {
 }
 
 function moveToSaved() {
+  resetMeme()
   const homePageContainer = document.querySelector('.home-page-container')
   const memeEditorContainer = document.querySelector('.meme-editor-container')
   const savedPageContainer = document.querySelector('.saved-page-container')
@@ -26,6 +28,7 @@ function moveToSaved() {
 }
 
 function moveToAbout() {
+  resetMeme()
   const mainSocialInfo = document.querySelector('.main-social-info')
   moveToGallery()
 

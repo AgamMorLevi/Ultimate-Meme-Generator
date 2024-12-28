@@ -13,12 +13,12 @@ function initCanvas(imgUrl) {
   renderEmojis()
   renderMeme()
   addListeners()
-  rendomeMeme()
 }
 
 function renderMeme() {
   gElCanvas = document.querySelector('.main-canvas')
   gCtx = gElCanvas.getContext('2d')
+
   gSelectedLine = getLine()
   const img = new Image()
   img.src = gSelectedImg
