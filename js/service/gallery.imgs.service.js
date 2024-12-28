@@ -7,6 +7,8 @@ function getMeme() {
   return gImgs
 }
 function resetMeme() {
+  const elInputText = document.querySelector('.text-input')
+  elInputText.value = ''
   gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
