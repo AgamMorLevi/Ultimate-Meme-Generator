@@ -41,13 +41,14 @@ main .meme-editor-container{
     height: auto;
     background-color: transparent;
     border-radius: 0;
-    width: 118px;
+    width: fit-content;
     border-bottom:none;
     cursor: pointer;
+    border-right: 2px solid white;
 }
 
-.main-nav ul li:first-child{
-    border-right: 2px solid white;
+.main-nav ul li:last-child{
+    border-right: none;
 }
 
 .main-nav .close-btn {
@@ -132,7 +133,7 @@ main .meme-editor-container{
     font-size: 20.7875px;
         
 }
-section .image-gallery{
+section .image-gallery, .image-saved-gallery{
     column-count: 8;
 }
 

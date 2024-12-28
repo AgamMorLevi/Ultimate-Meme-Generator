@@ -169,7 +169,7 @@
   }
   
  
-  button.share-option, button.download-option, .btn-facebook {
+  button.share-option, .share-facebook{
     width: 100%;
     margin: 10px 0;
     padding: 10px;
@@ -191,10 +191,8 @@
     border-radius: 5px;
     cursor: pointer;
   }
- .btn-Share:hover, button.download-option:hover {
-    background-color: #e6831a;
-  }
-  .btn-facebook{
+
+  .share-facebook{
     margin:  0;
     padding: 0;
   

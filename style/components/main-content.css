@@ -10,7 +10,7 @@ main{
 
 }
 
-section .image-gallery{
+section .image-gallery,.image-saved-gallery{
     column-count: 2;
   column-gap: 16px;
   padding: 16px;

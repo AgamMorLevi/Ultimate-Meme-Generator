@@ -16,14 +16,15 @@
         <nav class="main-nav" id="mainNav" onclick="onClickHumburger()">
             <ul class="clean-list">
                 <li onclick="moveToGallery()">Gallery</li>
+                <li onclick="moveToSaved()">Saved</li>
                 <li onclick="moveToAbout()">About</li>
-                <li onclick=" OnCreateRendomMeme()">I`m flexible</li>
+                <li onclick="OnCreateRendomMeme()">I`m flexible</li>
             </ul>
         </nav>
     </header>
 
 <main>
-        <section class="home-page-container" >
+<section class="home-page-container" >
 
     <div class="main-search">
     <form autocomplete="off">        
@@ -170,9 +171,9 @@
                         <input name="img" id="imgData" type="hidden" />
                         <button class="share-option" type="submit">Shere</button>
                       </form>
-                      <button onclick=" saveMemeToStorage()">Save</button>
-                      <button class="download-option" onclick="downloadImg()">Download</button>
-                      <button class="file-input" onclick="onChooseImgPicker()">Choose Img</button>
+                      <button class="share-option" onclick=" saveMemeToStorage()">Save</button>
+                      <button class="download-option share-option" onclick="downloadImg()">Download</button>
+                      <button class="file-input share-option" onclick="onChooseImgPicker()">Choose Img</button>
                       <input class="hiddeninput" role="button" type="file" name="image" onchange="onImgInput(event)" accept=".png" hidden />
                     </button>
                     </label>
@@ -183,6 +184,13 @@
             </div>
           </section>
       
+    </section>
+
+    <section class="saved-page-container" >
+
+        <div class="main-content">
+            <div class="image-saved-gallery"> </div> 
+        </div>   
     </section>
 
 </main>

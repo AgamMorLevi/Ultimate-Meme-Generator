@@ -54,7 +54,7 @@ function onUploadImg(ev) {
   function onSuccess(uploadedImgUrl) {
     const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
     document.querySelector('.share-option').innerHTML = `
-        <button class="btn-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
+        <button class="share-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
            Share on Facebook  
         </button>`
   }

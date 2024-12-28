@@ -22,7 +22,6 @@ function renderMeme() {
   gSelectedLine = getLine()
   const img = new Image()
   img.src = gSelectedImg
-
   img.onload = () => {
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
     resizeCanvas()
@@ -42,6 +41,7 @@ function resizeCanvas() {
   }
 
   const canvasHeight = (img.height * gElCanvas.width) / img.width
+
   gElCanvas.height = canvasHeight
 }
 

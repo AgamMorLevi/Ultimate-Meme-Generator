@@ -22,12 +22,14 @@ function renderGallery(images) {
 
 function onSelectImage(imageId) {
   const homePageContainer = document.querySelector('.home-page-container')
+  const savedPageContainer = document.querySelector('.saved-page-container')
   const memeEditorContainer = document.querySelector('.meme-editor-container')
 
   const selectedImage = gImgs.find((img) => img.id === imageId)
 
   if (selectedImage) {
     homePageContainer.style.display = 'none'
+    savedPageContainer.style.display = 'none'
     memeEditorContainer.style.display = window.innerWidth < 764 ? 'grid' : 'flex'
 
     const imgUrl = `img/meme-img/${selectedImage.url}`
@@ -39,9 +41,21 @@ function onSelectImage(imageId) {
 function moveToGallery() {
   const homePageContainer = document.querySelector('.home-page-container')
   const memeEditorContainer = document.querySelector('.meme-editor-container')
+  const savedPageContainer = document.querySelector('.saved-page-container')
 
   homePageContainer.style.display = 'grid'
   memeEditorContainer.style.display = 'none'
+  savedPageContainer.style.display = 'none'
+}
+
+function moveToSaved() {
+  const homePageContainer = document.querySelector('.home-page-container')
+  const memeEditorContainer = document.querySelector('.meme-editor-container')
+  const savedPageContainer = document.querySelector('.saved-page-container')
+  getSavedImage()
+  homePageContainer.style.display = 'none'
+  memeEditorContainer.style.display = 'none'
+  savedPageContainer.style.display = 'grid'
 }
 
 function moveToAbout() {
