@@ -60,7 +60,3 @@ function _createImages() {
 function _saveImages() {
   saveToStorage(STORAGE_KEY, gImgs)
 }
-function onClickHumburger() {
-  const nav = document.getElementById('mainNav')
-  nav.classList.toggle('open')
-}
