@@ -23,8 +23,6 @@ function rendomeMeme() {
   const randomImageIndex = getRandomInt(0, gImgs.length)
   const randomImage = gImgs[randomImageIndex]
 
-  console.log(randomLine, 'randomLine', randomImage, 'randomImage')
-
   return { randomLine, randomImage }
 }
 
@@ -32,14 +30,11 @@ function OnCreateRendomMeme() {
   const memeEditorContainer = document.querySelector('.meme-editor-container')
   const homePageContainer = document.querySelector('.home-page-container')
 
-  // Get the random line and image from rendomeMeme
   const { randomLine, randomImage } = rendomeMeme()
 
   homePageContainer.style.display = 'none'
   memeEditorContainer.style.display = window.innerWidth < 764 ? 'grid' : 'flex'
 
-  // Update the image and text for the meme
-  console.log(randomLine, 'randomLine', randomImage, 'randomImage')
   const randomImageUrl = `img/meme-img/${randomImage.url}`
   gMeme.lines[0].txt = randomLine
   ;(gMeme.lines[0].pos = { x: 0, y: 50 }), initCanvas(randomImageUrl)
