@@ -3,9 +3,12 @@
 function openShereModal() {
   const modal = document.getElementById('shareModal')
   modal.style.display = 'flex'
+  hideRect()
 }
 
 function closeShereModal() {
+  shouldDrawRect = true
+  renderMeme()
   const modal = document.getElementById('shareModal')
   modal.style.display = 'none'
 }

@@ -1,5 +1,6 @@
 'use strict'
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+var shouldDrawRect = true
 
 function addListeners() {
   addMouseListeners()
@@ -22,6 +23,7 @@ function addTouchListeners() {
 }
 
 function onDrewRect() {
+  if (!shouldDrawRect) return
   gCtx.font = `${gSelectedLine.size}px ${gSelectedLine.font}`
   gCtx.textAlign = gSelectedLine.textAlign
   const textMetrics = gCtx.measureText(gSelectedLine.txt)
@@ -40,6 +42,11 @@ function onDrewRect() {
   gCtx.lineWidth = 2
   gCtx.rect(boxX - 5, gSelectedLine.pos.y - textHeight, textWidth + 10, textHeight + 10)
   gCtx.stroke()
+}
+
+function hideRect() {
+  shouldDrawRect = false
+  renderMeme()
 }
 
 function onDown(ev) {
