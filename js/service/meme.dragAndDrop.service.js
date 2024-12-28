@@ -51,10 +51,8 @@ function hideRect() {
 
 function onDown(ev) {
   const pos = getEvPos(ev)
-  const elInputTxt = document.querySelector('.text-input')
 
   if (isLineClicked(pos)) {
-    elInputTxt.focus()
     gStartPos = pos
     ev.preventDefault()
   }
