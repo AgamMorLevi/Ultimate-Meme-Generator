@@ -143,6 +143,7 @@ section .image-gallery, .image-saved-gallery{
     align-items: center;
     justify-content: center;
     gap: 5rem;
+    flex-direction: row;
 
 }
 
