@@ -6,6 +6,8 @@ let selectedCategory = 'all'
 function onInit() {
   _createImages()
   renderGallery(gImgs)
+  renderSelectOptionSearch()
+  renderSearchFilters()
 }
 
 function renderGallery(images) {
@@ -18,6 +20,24 @@ function renderGallery(images) {
   )
   const elimageGallery = document.querySelector('.image-gallery')
   elimageGallery.innerHTML = strHtmls.join('')
+}
+
+function renderSelectOptionSearch() {
+  var strHtmls = `<option hidden>select Option</option>`
+  categoreis.map((category) => (strHtmls += `<option value="${category}">${category}</option>`))
+  const elCategorySelect = document.querySelector('.category-select')
+  elCategorySelect.innerHTML = strHtmls
+}
+
+function renderSearchFilters() {
+  const strHtmls = filters.map(
+    (filter) =>
+      `
+       <div class="category" data-value="${filter}" onclick="onCategoryClick('${filter}'); onOptionClick('${filter}')">${filter}</div>
+  `
+  )
+  const elCategoryContainer = document.querySelector('.categories-container')
+  elCategoryContainer.innerHTML += strHtmls.join('')
 }
 
 function onSelectImage(imageId) {
@@ -58,8 +78,8 @@ function onCategoryClick(category) {
 }
 
 function OnFilterImages(searchTerm, category) {
-  FilterImages(searchTerm, category)
-  renderGallery(filteredImgs)
+  var filtered = filterImages(searchTerm, category)
+  renderGallery(filtered)
 }
 
 function onOptionClick(category) {

@@ -116,8 +116,3 @@ function getEvPos(ev) {
 function onChooseImgPicker() {
   document.querySelector('.hiddeninput').click()
 }
-
-function geteEmojiScrollerWidth() {
-  const emojiScroller = document.querySelector('.emoji-scroller')
-  emojiScroller.style.width = window.outerWidth - 128 + 'px'
-}

@@ -6,8 +6,25 @@ const categoryData = {
   cute: { popularity: 1, fontSize: 16 },
   stoned: { popularity: 1, fontSize: 16 },
 }
+const categoreis = [
+  'all',
+  'spongebob',
+  'buttock',
+  'romantic',
+  'hamburger',
+  'house',
+  'scared',
+  'Plankton',
+  'Patrick',
+  'everyone',
+  'Mr.Crabbe',
+  'angry',
+  'Squidward',
+]
 
-function FilterImages(searchTerm, category) {
+const filters = ['funny', 'money', 'cute', 'stoned']
+
+function filterImages(searchTerm, category) {
   var filteredImgs = gImgs
 
   if (category !== 'all') {
@@ -21,6 +38,7 @@ function FilterImages(searchTerm, category) {
       img.keywords.some((keyword) => keyword.toLowerCase().includes(searchTerm))
     )
   }
+  return filteredImgs
 }
 
 function optionClick(category) {

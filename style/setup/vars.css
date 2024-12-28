@@ -2,7 +2,9 @@
 
 :root{
     --clr-primary:rgba(96, 96, 96, 1);
-    --clr-secondary:rgba(88, 201, 58, 1);
+    --clr-primary-1:rgba(227, 227, 227, 1);
+    --clr-secondary:#e7d362;
+    --clr-btn-txt:rgba(255,255,255,1);
     --clr-facebook:rgba(81, 111, 173, 1);
     --clr-linkdin:rgb(10 102 194);
     --clr-github:rgb(0 0 0);

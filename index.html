@@ -9,7 +9,6 @@
 </head>
 
 <body class="main-layout" onload="onInit()">
-
     <header class="main-header full" >
         <img class="logo" src="img/logo.png" alt="logo">
         <span class="hamburger" onclick="onClickHumburger()">&#9776;</span>
@@ -22,43 +21,18 @@
             </ul>
         </nav>
     </header>
-
 <main>
-<section class="home-page-container" >
 
+<section class="home-page-container" >
     <div class="main-search">
     <form autocomplete="off">        
-            <input id="search-input" class="search" type="text" placeholder="Enter search keyword"  onkeydown="onEnterSearch(event)"/>
-            <img src="img/ICONS/search-icon.png" onclick="onSearch()"/>
+            <input id="search-input" class="search" type="text" placeholder="Enter search keyword" oninput="onSearch()" onkeydown="onEnterSearch(event)"/>
+            <img src="img/ICONS/search-icon.png" />
 
-    </form>
-                 
-                <div class="categories-container">
-                    
-                    <select class="category-select category" onchange="onCategoryClick(this.value)">
-                        <option hidden>select Option</option>
-                        <option value="all">all</option>
-                        <option value="spongebob">spongebob</option>
-                        <option value="buttock">buttock</option>
-                        <option value="romantic">romantic</option>
-                        <option value="hamburger">hamburger</option>
-                        <option value="house">house</option>
-                        <option value="scared">scared</option>
-                        <option value="Plankton">Plankton</option>
-                        <option value="Patrick">Patrick</option>
-                        <option value="everyone">everyone</option>
-                        <option value="Mr.Crabbe">Mr. Crabbe</option>
-                        <option value="angry">angry </option>
-                        <option value="Squidward">Squidward</option>
-
-                    </select>
-                 
-                        <div class="category" data-value="funny" onclick="onCategoryClick('funny'); onOptionClick('funny')">funny</div>
-                        <div class="category" data-value="money" onclick="onCategoryClick('money'); onOptionClick('money')">money</div>
-                        <div class="category" data-value="cute" onclick="onCategoryClick('cute'); onOptionClick('cute')">cute</div>
-                        <div class="category" data-value="stoned" onclick="onCategoryClick('stoned'); onOptionClick('stoned')">stoned</div>
-         
-                </div>
+    </form>               
+       <div class="categories-container">
+               <select class="category-select category" onchange="onCategoryClick(this.value)"></select>                          
+       </div>
     </div>
     <div class="main-content">
         <div class="image-gallery"> </div> 
@@ -66,7 +40,7 @@
 
     <div class="main-social-info">
         <div class="person-container">
-            <img class="info-img" src="img/info.png" alt="Monica Geller img">
+            <img class="info-img" src="img/info.png" alt="SpongeBob">
         </div>
         <div class="person-detailes">
         <h4>SpongeBob SquarePants</h4>
@@ -79,8 +53,7 @@
             <li><button class="btn-facebook"><a href="https://www.facebook.com/spongebob/"></a></button></li>
             <li><button class="btn-gitub"><a href="https://github.com/topics/spongebob?l=java&o=desc&s=updated"></a></button></li>
         </ul>
-    </div>
-        
+    </div>       
     </div>
 </section>
 
@@ -143,18 +116,7 @@
             <div class="emoji-scroller-container">
                 <button class="scroll-button" onclick="OnScroll(-100)">&#9664;</button> 
                 <div class="emoji-scroller" id="emojiScroller">
-                  <div class="emoji-container">
-                    <span onclick="onEmojiClick('🍕')">🍕</span>
-                    <span onclick="onEmojiClick('🍔')">🍔</span>
-                    <span onclick="onEmojiClick('🌮')">🌮</span>
-                    <span onclick="onEmojiClick('🍣')">🍣</span>
-                    <span onclick="onEmojiClick('🍜')">🍜</span>
-                    <span onclick="onEmojiClick('🍇')">🍇</span>
-                    <span onclick="onEmojiClick('🍪')">🍪</span>
-                    <span onclick="onEmojiClick('🦐')">🦐</span>
-                    <span onclick="onEmojiClick('🦑')">🦑</span>
-                    <span onclick="onEmojiClick('🦞')">🦞</span>
-                  </div>
+                  <div class="emoji-container"></div>
                 </div>
                 <button class="scroll-button" onclick="OnScroll(100)">&#9654;</button> 
               </div>
@@ -179,15 +141,12 @@
                     </label>
                     </div>
                   </div>
-
-
             </div>
           </section>
       
     </section>
 
     <section class="saved-page-container" >
-
         <div class="main-content">
             <div class="image-saved-gallery"> </div> 
         </div>   
@@ -197,7 +156,6 @@
     <footer class="main-footer full">
         <img class="logo"src="img/logo.png" alt="logo">
         <div class="footer-text">© All rights reserved to Bikini Bottom © </div>
-     
     </footer>
 
 
@@ -213,13 +171,11 @@
     <script src="js/service/meme.dragAndDrop.service.js"></script>
     <script src="js/service/meme.downloadAndUpload.js"></script>
     <script src="js/service/meme.btnTools.service.js"></script>
-
+    <script src="js/service/meme.emoji.js"></script>
 
     <script src="js/mainNavBar.controller.js"></script>
     <script src="js/gallery.controller.js"></script>
     <script src="js/meme.controller.js"></script>
-
-
 </body>
 
 </html>

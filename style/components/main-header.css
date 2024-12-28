@@ -1,20 +1,24 @@
-.main-layout .main-header {
+.main-header {
     display: grid;
-    background-color: #e7d362;
-    grid-template-columns: 1fr 1fr;
+    background-color: var(--clr-secondary);
     align-items: center;
     padding: 0.625rem;
-    font-family: Montserrat-Bold;
-
-
 }
 
 .main-header .logo{
     width: 5.3125rem;
     grid-column: 1 / 2;
-
 }
 
+/* Desktop */
+@media screen and (min-width: 768px) {
+.main-header {
+    font-family: Montserrat-Bold;
+    grid-template-columns: 1fr auto;
+}
 
+.main-header .logo {
+    width: 9.1125rem;    
+}
 
-
+}

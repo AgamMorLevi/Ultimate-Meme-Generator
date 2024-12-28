@@ -10,7 +10,7 @@ const input = document.querySelector('.text-input')
 
 function initCanvas(imgUrl) {
   gSelectedImg = imgUrl
-  geteEmojiScrollerWidth()
+  renderEmojis()
   renderMeme()
   addListeners()
   rendomeMeme()
@@ -119,6 +119,18 @@ function onDeleteLine() {
 function onSwitchLine() {
   switchLine()
   renderMeme()
+}
+
+function renderEmojis() {
+  const strHtmls = emojis.map(
+    (emoji) => `
+          <span onclick="onEmojiClick('${emoji}')">${emoji}</span>
+            `
+  )
+  const elEmojiContainer = document.querySelector('.emoji-container')
+  elEmojiContainer.innerHTML = strHtmls.join('')
+
+  geteEmojiScrollerWidth()
 }
 
 function OnScroll(side) {

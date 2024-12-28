@@ -1,14 +1,23 @@
-.edit-canvas-tools{
-    gap: 12px;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-evenly;
-    justify-self: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    border-radius: 1.875em;
+.edit-canvas-tools {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
 }
+
+
+.edit-canvas-tools input{
+  font-family: "Montserrat-Regular";
+  width: 100%;
+  height: 43px;
+  background-color: var(--clr-btn-txt);
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  padding: 13px;
+} 
+
 
 .edit-canvas-tools .btns-editor-container{
     display: flex;
@@ -16,16 +25,14 @@
 }
 
 .edit-canvas-tools > div > button{
-
     cursor: pointer;
     width: 43px;
     height: 42px;
     padding: 8px;
     justify-self: center;
-    background: rgba(255,255,255,1);
+    background: var(--clr-btn-txt);
     border-radius: 15px;
     border: none;
-
     touch-action: manipulation;
 }
 
@@ -36,10 +43,6 @@
     grid-template-columns: repeat(5, 1fr);
     border-radius: 15px;
 }
-.btn-switch-inputs img{
-    width: 27px;
-    height: 27px;
-}
 
 .edit-canvas-tools .font-selector{
     grid-column: 1/4;
@@ -47,34 +50,6 @@
     border: none;
 }
 
-.sticker-container{
-    display: flex;
-    background-color: rgba(255, 255, 255, 1);;
-    justify-content: center; 
-    align-items: center;
-    border-radius: 15px;
-    gap: 10px; 
-    margin: 20px 0; 
-    width: 306px;
-    height: 57px;
-}    
-
-.sticker-container img{
-    width: 32px;
-    height: 29px;
-}
-
-
-.edit-canvas-tools .share-btn{
-    /* font-family: "Montserrat-Medium"; */
-    width: 123px;
-    height: 42px;
-    font-size: 16px;
-    background-color:#fe9d8ce3;
-    color:rgba(255,255,255,1);
-   
-
-}
 .color-picker-fill, .color-picker-border {
     position: relative;
   }
@@ -92,7 +67,6 @@
   .emoji-scroller-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px; 
   }
 
@@ -103,27 +77,18 @@
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 10px;
-    background-color: #f9f9f9;
-    position: relative;
-    display: flex;
-    align-items: center;
+    background-color: var(--clr-btn-txt);
   }
 
   .emoji-container {
     font-size: 2rem;
-    display: inline-block;
     transition: scroll-behavior 0.3s ease; 
-  }
-  .emoji-container span{
     cursor: pointer;
   }
 
   .emoji-scroller-container .scroll-button {
-    background-color: #ddd;
+    background-color: transparent;
     border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -132,8 +97,18 @@
   }
 
 
+  .edit-canvas-tools .share-btn{
+    width: 123px;
+    height: 42px;
+    font-size: 16px;
+    background-color:#fe9d8ce3;
+    color:var(--clr-btn-txt);
+}
+
+
+  /* Modal Content */
   .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -144,11 +119,9 @@
     justify-content: center;
     align-items: center;
   }
-  
-  /* Modal Content */
 
 .modal-content {
-    background-color: white;
+    background-color: var(--clr-btn-txt);;
     width: 80%;
     max-width: 300px;
     padding: 40px;
@@ -157,7 +130,6 @@
     position: relative;
 }
   
-  /* Close Button */
   .close-btn {
     position: absolute;
     top: 10px;
@@ -174,8 +146,8 @@
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
-    background-color: #e7d362;
-    color: white;
+    background-color: var(--clr-secondary);
+    color: var(--clr-btn-txt);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -185,8 +157,8 @@
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
-    background-color: #e7d362;
-    color: white;
+    background-color: var(--clr-secondary);
+    color: var(--clr-btn-txt);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -197,3 +169,29 @@
     padding: 0;
   
   }
+
+
+
+  @media screen and (min-width: 768px) {
+
+    .edit-canvas-tools{
+        font-size: 2.5rem;
+        width: fit-content;
+        justify-items: center;
+        gap: 0;
+        justify-content: space-between;
+        height: 500px;
+       
+    }
+    
+    .edit-canvas-tools>div>button{
+        width: 49.1px;
+        height: 52.2px;
+        padding: 10px;   
+    }
+    
+    .font-editors-container {
+        column-gap: 27.6px;
+        row-gap: 36.8px;
+    }
+  }    

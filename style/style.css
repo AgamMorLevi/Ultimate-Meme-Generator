@@ -16,7 +16,4 @@
 @import url('components/main-nav.css');
 @import url('components/main-content.css');
 @import url('components/main-footer.css');
-@import url('components/meme-editor-container.css');
 @import url('components/edit-canvas-tools.css');
-
-@import url('setup/mq.css');

@@ -14,9 +14,28 @@
 .meme-editor-container{
     display: none; 
     padding: 11px;
+    gap: 7px
 }
 
 .saved-page-container{
     display: none; 
     padding: 11px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .main-layout {
+        grid-template-rows: 8.3rem 1fr 13.125rem;
+    } 
+
+    .home-page-container {
+        grid-template-rows: 9rem 1fr 25.125rem;
+    }
+
+    .meme-editor-container{
+        height: 100%;
+        gap:140px;
+        justify-content: center;
+        align-items: center;
+    } 
 }

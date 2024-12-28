@@ -1,21 +1,14 @@
 
 
 .main-social-info{
-    background: rgba(255,255,255,1);
+    background: var(--clr-btn-txt);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0 0 0;
 }
 
-.main-social-info>*{
-    margin: 0;
-    padding: 0;
-    justify-self: center;
-   
-}
-
-.main-social-info .person-container{
+.person-container{
     width: 10.625rem;
     height: 13.07rem;
 }
@@ -39,7 +32,6 @@
 .person-detailes p{
     font-family: Montserrat-thin;
     width: 17.07rem;
-    height: 5.25rem;
     text-align: center;
     color: rgb(0, 0, 0);
 }
@@ -70,35 +62,32 @@
     background-size: contain; 
     background-repeat: no-repeat; 
     background-position: center; 
+    position: absolute;
+ 
 }
 
 
 .social-links .btn-linkdin a {
-
-    position: absolute;
     width: 27px;
     height: 25px;
    background-image: url('../../img/ICONS/linkedin.png');
 }
+
 .social-links .btn-linkdin:hover {
    background: var(--clr-linkdin);
 }
 
 .social-links .btn-facebook a {
-
-    position: absolute;
     width: 13px;
     height: 25px;
    background-image: url('../../img/ICONS/facebook.png');
 }
+
 .social-links .btn-facebook:hover {
    background: var(--clr-facebook);
 }
 
-
 .social-links .btn-gitub a {
-
-    position: absolute;
     width: 25px;
     height: 25px;
    background-image: url('../../img/ICONS/github.png');
@@ -107,4 +96,28 @@
    background: var(--clr-github);
 }
 
+/* Desktop */
+@media screen and (min-width: 768px) {
+.main-social-info {
+    justify-content: center;
+    gap: 5rem;
+    flex-direction: row;
+}
 
+.person-detailes {
+    align-items:start;
+    gap: 0; 
+}
+
+.person-detailes h4 {
+    font-size: 25px;
+}
+
+.person-detailes p {
+    width: 530px;
+    margin-bottom: 48px;
+    height:auto; 
+    font-size: 20px;
+    text-align: start;    
+}
+}

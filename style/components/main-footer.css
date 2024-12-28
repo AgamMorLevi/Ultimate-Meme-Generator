@@ -1,5 +1,5 @@
 .main-footer{
-    background-color: #e7d362;
+    background-color: var(--clr-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,10 +7,6 @@
     gap: 1rem;
 }
 
-.main-footer>*{
-    justify-self: center;
-}
-  
 .main-footer img{
     width: 9rem;
 }
@@ -21,4 +17,10 @@
     width: 100%;
 }
 
-
+/* Desktop */
+@media screen and (min-width: 768px) {
+    .main-footer .footer-text {
+        font-size: 20.7875px;
+            
+    }
+}
